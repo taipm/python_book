@@ -1,113 +1,194 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lập trình Python cơ bản</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .header {
-            background: linear-gradient(135deg, #3776ab, #ffd43b);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .nav {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .nav a {
-            color: #3776ab;
-            text-decoration: none;
-            margin-right: 20px;
-            font-weight: bold;
-        }
-        .nav a:hover {
-            text-decoration: underline;
-        }
-        .chapter {
-            background: white;
-            border: 1px solid #dee2e6;
-            border-radius: 5px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-        .chapter h3 {
-            color: #3776ab;
-            margin-top: 0;
-        }
-        .status {
-            color: #28a745;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>🐍 Lập trình Python cơ bản</h1>
-        <p>Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source</p>
+---
+title: "Demo - Giao diện mới"
+description: "Xem trước giao diện mới của Python Book"
+layout: default
+---
+
+<style>
+.demo-banner {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.demo-banner h1 {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-3xl);
+}
+
+.demo-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.demo-feature {
+    background: var(--color-bg-secondary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.demo-feature h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.demo-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-xl);
+}
+
+.status-success {
+    background: var(--color-success);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+</style>
+
+<div class="demo-banner">
+    <h1>🐍 Giao diện mới đã sẵn sàng!</h1>
+    <p>Website Python Book đã được nâng cấp hoàn toàn với giao diện hiện đại và chuyên nghiệp</p>
+</div>
+
+<div class="status-success">
+    ✅ Deployment thành công! Giao diện mới đã hoạt động.
+</div>
+
+<div class="demo-features">
+    <div class="demo-feature">
+        <h3><i class="fas fa-palette"></i> Giao diện hiện đại</h3>
+        <ul>
+            <li>Dark/Light mode tự động</li>
+            <li>Typography tối ưu với Inter font</li>
+            <li>Responsive design hoàn hảo</li>
+            <li>Animations mượt mà</li>
+        </ul>
     </div>
-
-    <div class="nav">
-        <a href="/">Trang chủ</a>
-        <a href="chapters/chapter01.html">Chương 1</a>
-        <a href="chapters/chapter02.html">Chương 2</a>
-        <a href="code-examples/">Code Examples</a>
-        <a href="https://github.com/taipm/python_book">GitHub</a>
+    
+    <div class="demo-feature">
+        <h3><i class="fas fa-rocket"></i> Trải nghiệm nâng cao</h3>
+        <ul>
+            <li>Reading progress tracking</li>
+            <li>Table of contents tự động</li>
+            <li>Search functionality</li>
+            <li>Bookmark và notes</li>
+        </ul>
     </div>
-
-    <div class="status">
-        ✅ Website đã hoạt động! GitHub Pages deployment thành công.
+    
+    <div class="demo-feature">
+        <h3><i class="fas fa-code"></i> Code experience</h3>
+        <ul>
+            <li>Syntax highlighting chuyên nghiệp</li>
+            <li>Copy code với 1 click</li>
+            <li>Interactive code blocks</li>
+            <li>Multiple language support</li>
+        </ul>
     </div>
-
-    <h2>📚 Danh mục chương</h2>
-
-    <div class="chapter">
-        <h3>📘 Chương 1: Giới thiệu về Python</h3>
-        <p>Tìm hiểu Python là gì và tại sao nên học Python</p>
-        <a href="chapters/chapter01.html">Đọc chương →</a>
+    
+    <div class="demo-feature">
+        <h3><i class="fas fa-mobile-alt"></i> Mobile-first</h3>
+        <ul>
+            <li>Tối ưu cho mobile</li>
+            <li>Touch-friendly interface</li>
+            <li>Fast loading</li>
+            <li>Offline reading support</li>
+        </ul>
     </div>
+</div>
 
-    <div class="chapter">
-        <h3>🔧 Chương 2: Cài đặt môi trường</h3>
+<h2>📚 Danh mục chương</h2>
+
+<div class="quick-start-cards">
+    <div class="start-card featured">
+        <div class="card-header">
+            <span class="chapter-number">01</span>
+            <div class="card-meta">
+                <span class="difficulty beginner">Cơ bản</span>
+                <span class="reading-time">15 phút</span>
+            </div>
+        </div>
+        <h3>Giới thiệu về Python</h3>
+        <p>Tìm hiểu Python là gì và tại sao nên học Python với giao diện mới</p>
+        <div class="card-footer">
+            <a href="{{ '/chapters/chapter01.html' | relative_url }}" class="btn btn-primary">
+                Đọc chương mới <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="start-card">
+        <div class="card-header">
+            <span class="chapter-number">02</span>
+            <div class="card-meta">
+                <span class="difficulty beginner">Cơ bản</span>
+                <span class="reading-time">20 phút</span>
+            </div>
+        </div>
+        <h3>Cài đặt môi trường</h3>
         <p>Hướng dẫn cài đặt Python và các công cụ cần thiết</p>
-        <a href="chapters/chapter02.html">Đọc chương →</a>
+        <div class="card-footer">
+            <a href="{{ '/chapters/chapter02.html' | relative_url }}" class="btn btn-outline">
+                Xem chương <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
     </div>
-
-    <div class="chapter">
-        <h3>📝 Chương 3: Cú pháp cơ bản</h3>
+    
+    <div class="start-card">
+        <div class="card-header">
+            <span class="chapter-number">03</span>
+            <div class="card-meta">
+                <span class="difficulty beginner">Cơ bản</span>
+                <span class="reading-time">25 phút</span>
+            </div>
+        </div>
+        <h3>Cú pháp cơ bản</h3>
         <p>Học cú pháp Python đầu tiên và làm việc với biến</p>
-        <span style="color: #6c757d;">Đang phát triển...</span>
+        <div class="card-footer">
+            <span style="color: var(--color-text-muted);">Đang phát triển...</span>
+        </div>
     </div>
+</div>
 
-    <h2>💻 Code Examples</h2>
-    <p>Tất cả code examples có thể tải về và chạy:</p>
-    <ul>
-        <li><a href="code-examples/chapter01/hello_world.py">Hello World</a></li>
-        <li><a href="code-examples/chapter01/zen_of_python.py">The Zen of Python</a></li>
-    </ul>
+<h2>💻 Code Examples</h2>
+<p>Tất cả code examples với syntax highlighting mới:</p>
 
-    <h2>🤝 Đóng góp</h2>
-    <p>Dự án này là open source. Bạn có thể:</p>
-    <ul>
-        <li>⭐ <a href="https://github.com/taipm/python_book">Star repository</a></li>
-        <li>🐛 <a href="https://github.com/taipm/python_book/issues">Báo lỗi</a></li>
-        <li>📝 <a href="https://github.com/taipm/python_book/pulls">Đóng góp nội dung</a></li>
-    </ul>
+<div class="code-example">
+    <div class="code-title">hello_world.py</div>
+    <div class="highlight">
+        <pre><code class="language-python"># Chương trình Python đầu tiên
+print("Xin chào, Python Book!")
+print("🐍 Chào mừng bạn đến với thế giới Python!")
 
-    <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #dee2e6; text-align: center; color: #6c757d;">
-        <p>© 2025 Tai PM - <a href="https://github.com/taipm/python_book">GitHub</a> - MIT License</p>
-        <p>Cập nhật lần cuối: 03/07/2025</p>
-    </footer>
-</body>
-</html>
+# Hiển thị thông tin
+name = "Python Learner"
+print(f"Xin chào, {name}!")
+</code></pre>
+    </div>
+</div>
+
+<div class="demo-actions">
+    <a href="{{ '/' | relative_url }}" class="btn btn-primary btn-large">
+        <i class="fas fa-home"></i> Về trang chủ mới
+    </a>
+    <a href="{{ '/chapters/chapter01.html' | relative_url }}" class="btn btn-secondary btn-large">
+        <i class="fas fa-book"></i> Xem chương mẫu
+    </a>
+    <a href="https://github.com/taipm/python_book" class="btn btn-outline btn-large">
+        <i class="fab fa-github"></i> GitHub Repository
+    </a>
+</div>

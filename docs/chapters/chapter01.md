@@ -1,20 +1,34 @@
-# Chương 1: Giới thiệu về Python
-
-## 🎯 Mục tiêu học tập
-
-Sau khi hoàn thành chương này, bạn sẽ có thể:
-
-- [ ] Hiểu Python là gì và tại sao nên học Python
-- [ ] Nắm được lịch sử và triết lý thiết kế của Python
-- [ ] Biết các ứng dụng thực tế của Python trong đời sống
-- [ ] So sánh Python với các ngôn ngữ lập trình khác
-
-## 📖 Kiến thức cần có
-
-Chương này dành cho người hoàn toàn mới bắt đầu. Bạn không cần:
-- Kinh nghiệm lập trình trước đó
-- Kiến thức về máy tính chuyên sâu
-- Chỉ cần sự tò mò và động lực học tập!
+---
+title: "Chương 1: Giới thiệu về Python"
+description: "Tìm hiểu Python là gì, tại sao nên học Python và các ứng dụng thực tế"
+layout: chapter
+chapter_number: 1
+difficulty: beginner
+reading_time: 15
+objectives:
+  - "Hiểu Python là gì và tại sao nên học Python"
+  - "Nắm được lịch sử và triết lý thiết kế của Python"
+  - "Biết các ứng dụng thực tế của Python trong đời sống"
+  - "So sánh Python với các ngôn ngữ lập trình khác"
+prerequisites:
+  - "Không cần kinh nghiệm lập trình trước đó"
+  - "Không cần kiến thức về máy tính chuyên sâu"
+  - "Chỉ cần sự tò mò và động lực học tập!"
+next_chapter:
+  title: "Chương 2: Cài đặt môi trường"
+  url: "/chapters/chapter02.html"
+key_terms:
+  - name: "Python"
+    definition: "Ngôn ngữ lập trình bậc cao"
+  - name: "Interpreted"
+    definition: "Thông dịch, chạy trực tiếp"
+  - name: "Dynamic typing"
+    definition: "Kiểu dữ liệu động"
+  - name: "Cross-platform"
+    definition: "Đa nền tảng"
+  - name: "Zen of Python"
+    definition: "Triết lý thiết kế Python"
+---
 
 ## 📝 Python là gì?
 

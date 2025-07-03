@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman  # Disabled to use custom theme
 title: "Lập trình Python cơ bản"
 description: "Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source"
 

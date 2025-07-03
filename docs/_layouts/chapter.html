@@ -1,0 +1,239 @@
+---
+layout: default
+---
+
+<article class="chapter-content">
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="chapter-meta">
+            {% if page.chapter_number %}
+            <span class="chapter-number">Chương {{ page.chapter_number }}</span>
+            {% endif %}
+            
+            {% if page.difficulty %}
+            <span class="difficulty-badge difficulty-{{ page.difficulty }}">
+                {% case page.difficulty %}
+                    {% when 'beginner' %}
+                        <i class="fas fa-seedling"></i> Cơ bản
+                    {% when 'intermediate' %}
+                        <i class="fas fa-tree"></i> Trung bình
+                    {% when 'advanced' %}
+                        <i class="fas fa-mountain"></i> Nâng cao
+                {% endcase %}
+            </span>
+            {% endif %}
+            
+            {% if page.reading_time %}
+            <span class="reading-time">
+                <i class="fas fa-clock"></i> {{ page.reading_time }} phút đọc
+            </span>
+            {% endif %}
+        </div>
+        
+        <h1 class="chapter-title">{{ page.title }}</h1>
+        
+        {% if page.description %}
+        <p class="chapter-description">{{ page.description }}</p>
+        {% endif %}
+        
+        <!-- Learning Objectives -->
+        {% if page.objectives %}
+        <div class="learning-objectives">
+            <h3><i class="fas fa-bullseye"></i> Mục tiêu học tập</h3>
+            <ul class="objectives-list">
+                {% for objective in page.objectives %}
+                <li>
+                    <input type="checkbox" id="objective-{{ forloop.index }}" class="objective-checkbox">
+                    <label for="objective-{{ forloop.index }}">{{ objective }}</label>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        
+        <!-- Prerequisites -->
+        {% if page.prerequisites %}
+        <div class="prerequisites">
+            <h3><i class="fas fa-info-circle"></i> Kiến thức cần có</h3>
+            <ul>
+                {% for prereq in page.prerequisites %}
+                <li>{{ prereq }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </header>
+    
+    <!-- Chapter Content -->
+    <div class="chapter-body">
+        {{ content }}
+    </div>
+    
+    <!-- Chapter Footer -->
+    <footer class="chapter-footer">
+        <!-- Summary -->
+        {% if page.summary %}
+        <div class="chapter-summary">
+            <h3><i class="fas fa-clipboard-list"></i> Tóm tắt chương</h3>
+            <div class="summary-content">
+                {{ page.summary | markdownify }}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Key Terms -->
+        {% if page.key_terms %}
+        <div class="key-terms">
+            <h3><i class="fas fa-key"></i> Từ khóa quan trọng</h3>
+            <div class="terms-grid">
+                {% for term in page.key_terms %}
+                <div class="term-item">
+                    <strong>{{ term.name }}</strong>
+                    <span>{{ term.definition }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Practice Exercises -->
+        {% if page.exercises %}
+        <div class="practice-exercises">
+            <h3><i class="fas fa-dumbbell"></i> Bài tập thực hành</h3>
+            <div class="exercises-list">
+                {% for exercise in page.exercises %}
+                <div class="exercise-item">
+                    <h4>{{ exercise.title }}</h4>
+                    <p>{{ exercise.description }}</p>
+                    {% if exercise.difficulty %}
+                    <span class="exercise-difficulty difficulty-{{ exercise.difficulty }}">
+                        {{ exercise.difficulty | capitalize }}
+                    </span>
+                    {% endif %}
+                    {% if exercise.solution_url %}
+                    <a href="{{ exercise.solution_url }}" class="solution-link">
+                        <i class="fas fa-lightbulb"></i> Xem lời giải
+                    </a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Chapter Navigation -->
+        <div class="chapter-navigation">
+            <div class="nav-buttons">
+                {% if page.prev_chapter %}
+                <a href="{{ page.prev_chapter.url | relative_url }}" class="nav-btn prev-btn">
+                    <i class="fas fa-chevron-left"></i>
+                    <div class="nav-content">
+                        <span class="nav-label">Chương trước</span>
+                        <span class="nav-title">{{ page.prev_chapter.title }}</span>
+                    </div>
+                </a>
+                {% endif %}
+                
+                <a href="{{ '/chapters/' | relative_url }}" class="nav-btn chapters-btn">
+                    <i class="fas fa-list"></i>
+                    <span>Tất cả chương</span>
+                </a>
+                
+                {% if page.next_chapter %}
+                <a href="{{ page.next_chapter.url | relative_url }}" class="nav-btn next-btn">
+                    <div class="nav-content">
+                        <span class="nav-label">Chương sau</span>
+                        <span class="nav-title">{{ page.next_chapter.title }}</span>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- Feedback Section -->
+        <div class="chapter-feedback">
+            <h3><i class="fas fa-comment-dots"></i> Phản hồi</h3>
+            <p>Chương này có hữu ích không? Hãy cho chúng tôi biết!</p>
+            <div class="feedback-buttons">
+                <button class="feedback-btn helpful" data-feedback="helpful">
+                    <i class="fas fa-thumbs-up"></i> Hữu ích
+                </button>
+                <button class="feedback-btn not-helpful" data-feedback="not-helpful">
+                    <i class="fas fa-thumbs-down"></i> Cần cải thiện
+                </button>
+            </div>
+            <div class="feedback-links">
+                <a href="https://github.com/taipm/python_book/issues/new?title=Feedback%20for%20{{ page.title | url_encode }}" class="feedback-link">
+                    <i class="fas fa-bug"></i> Báo lỗi
+                </a>
+                <a href="https://github.com/taipm/python_book/discussions" class="feedback-link">
+                    <i class="fas fa-comments"></i> Thảo luận
+                </a>
+            </div>
+        </div>
+    </footer>
+</article>
+
+<!-- Reading Progress Indicator -->
+<div class="reading-progress-indicator">
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+</div>
+
+<!-- Floating Action Buttons -->
+<div class="floating-actions">
+    <button class="fab bookmark-btn" title="Đánh dấu trang" data-chapter="{{ page.url }}">
+        <i class="fas fa-bookmark"></i>
+    </button>
+    <button class="fab notes-btn" title="Ghi chú" data-chapter="{{ page.url }}">
+        <i class="fas fa-sticky-note"></i>
+    </button>
+    <button class="fab share-btn" title="Chia sẻ">
+        <i class="fas fa-share-alt"></i>
+    </button>
+</div>
+
+<!-- Notes Modal -->
+<div class="modal notes-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-sticky-note"></i> Ghi chú của bạn</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <textarea class="notes-textarea" placeholder="Viết ghi chú cho chương này..."></textarea>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary notes-cancel">Hủy</button>
+            <button class="btn btn-primary notes-save">Lưu ghi chú</button>
+        </div>
+    </div>
+</div>
+
+<!-- Share Modal -->
+<div class="modal share-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-share-alt"></i> Chia sẻ chương</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="share-options">
+                <button class="share-option" data-platform="facebook">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+                <button class="share-option" data-platform="twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+                <button class="share-option" data-platform="linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </button>
+                <button class="share-option copy-link">
+                    <i class="fas fa-link"></i> Sao chép link
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
