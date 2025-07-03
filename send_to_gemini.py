@@ -10,16 +10,15 @@ def run_gemini_with_tools(prompt: str) -> str:
         return "Lỗi: Câu lệnh không được để trống."
 
     try:
+        # ✅ Lệnh hoàn chỉnh và chính xác:
+        # Xóa '--all_files' vì nó gây ra lỗi token quá lớn.
+        # Chỉ cần '--sandbox' để bật tool và '--yolo' để tự động xác nhận.
         command = [
             "gemini",
             "--prompt", prompt,
             "--sandbox=true",
-            "--all_files",
             "--yolo"
         ]
-        
-        # Thêm cờ --debug để xem log chi tiết
-        # command.append("--debug")
 
         result = subprocess.run(
             command,
@@ -29,8 +28,7 @@ def run_gemini_with_tools(prompt: str) -> str:
             timeout=180
         )
         
-        # ✅ SỬA LỖI QUAN TRỌNG:
-        # Trả về cả stdout và stderr để không bỏ sót thông tin gỡ lỗi.
+        # Trả về cả stdout và stderr để không bỏ sót thông tin.
         stdout_output = f"--- STDOUT ---\n{result.stdout}" if result.stdout else "--- STDOUT ---\n(Trống)"
         stderr_output = f"--- STDERR ---\n{result.stderr}" if result.stderr else "--- STDERR ---\n(Trống)"
         
@@ -39,7 +37,6 @@ def run_gemini_with_tools(prompt: str) -> str:
     except FileNotFoundError:
         return "Lỗi: Không tìm thấy 'gemini' CLI."
     except subprocess.CalledProcessError as e:
-        # Khi có lỗi, cũng in ra cả stdout và stderr
         return f"Lỗi khi thực thi lệnh Gemini CLI (Exit Code {e.returncode}):\n--- STDOUT ---\n{e.stdout}\n--- STDERR ---\n{e.stderr}"
     except Exception as e:
         return f"Đã xảy ra một lỗi không mong muốn: {e}"
@@ -47,67 +44,70 @@ def run_gemini_with_tools(prompt: str) -> str:
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         user_prompt = " ".join(sys.argv[1:])
-        print(f"🚀 Đang gửi yêu cầu '{user_prompt}' tới Gemini với chế độ tự động xác nhận...")
+        print(f"🚀 Đang gửi yêu cầu '{user_prompt}' tới Gemini...")
         response = run_gemini_with_tools(user_prompt)
         print("\n--- Phản hồi từ Gemini ---")
         print(response)
-        print("\n✅ Hoàn thành.")
+        print("\n✅ Hoàn thành. Hãy kiểm tra thư mục của bạn.")
+    else:
+        print("Vui lòng cung cấp câu lệnh làm đối số.")
+        print('💡 Ví dụ: python3 send_to_gemini.py "Tạo một file tên là test.txt với nội dung Hello World"')
         
 # import subprocess
 # import sys
 
-# def send_command_to_gemini(prompt: str) -> str:
+# def run_gemini_with_tools(prompt: str) -> str:
 #     """
-#     Gửi một câu lệnh (prompt) đến Gemini CLI và trả về kết quả.
-
-#     Args:
-#         prompt: Chuỗi câu lệnh bạn muốn gửi đến Gemini.
-
-#     Returns:
-#         Kết quả đầu ra từ Gemini CLI.
+#     Gửi một câu lệnh đến Gemini CLI, cho phép nó sử dụng các công cụ
+#     và tự động chấp nhận các hành động.
 #     """
 #     if not prompt:
 #         return "Lỗi: Câu lệnh không được để trống."
 
 #     try:
-#         # ✅ SỬA LỖI QUAN TRỌNG:
-#         # Thêm cờ '--sandbox=false' để ngăn Gemini cố gắng sử dụng công cụ
-#         # và buộc nó phải trả về văn bản thuần túy.
-#         command = ["gemini", "--prompt", prompt, "--sandbox=false"]
+#         command = [
+#             "gemini",
+#             "--prompt", prompt,
+#             "--sandbox=true",
+#             "--all_files",
+#             "--yolo"
+#         ]
+        
+#         # Thêm cờ --debug để xem log chi tiết
+#         # command.append("--debug")
 
-#         # Thực thi lệnh và chờ nó hoàn thành
 #         result = subprocess.run(
 #             command,
 #             capture_output=True,
 #             text=True,
 #             check=True,
-#             timeout=120  # Đặt thời gian chờ để tránh treo
+#             timeout=180
 #         )
-
-#         # Trả về kết quả từ stdout (kết quả thành công)
-#         return result.stdout
+        
+#         # ✅ SỬA LỖI QUAN TRỌNG:
+#         # Trả về cả stdout và stderr để không bỏ sót thông tin gỡ lỗi.
+#         stdout_output = f"--- STDOUT ---\n{result.stdout}" if result.stdout else "--- STDOUT ---\n(Trống)"
+#         stderr_output = f"--- STDERR ---\n{result.stderr}" if result.stderr else "--- STDERR ---\n(Trống)"
+        
+#         return f"{stdout_output}\n\n{stderr_output}"
 
 #     except FileNotFoundError:
-#         return "Lỗi: Không tìm thấy 'gemini' CLI. Hãy chắc chắn rằng nó đã được cài đặt và nằm trong PATH của hệ thống."
+#         return "Lỗi: Không tìm thấy 'gemini' CLI."
 #     except subprocess.CalledProcessError as e:
-#         # Trả về lỗi từ stderr để gỡ lỗi
-#         error_message = f"Lỗi khi thực thi lệnh Gemini CLI:\n{e.stderr}"
-#         return error_message
-#     except subprocess.TimeoutExpired:
-#         return "Lỗi: Yêu cầu tới Gemini đã hết thời gian chờ."
+#         # Khi có lỗi, cũng in ra cả stdout và stderr
+#         return f"Lỗi khi thực thi lệnh Gemini CLI (Exit Code {e.returncode}):\n--- STDOUT ---\n{e.stdout}\n--- STDERR ---\n{e.stderr}"
 #     except Exception as e:
 #         return f"Đã xảy ra một lỗi không mong muốn: {e}"
 
 # if __name__ == "__main__":
 #     if len(sys.argv) > 1:
 #         user_prompt = " ".join(sys.argv[1:])
-#         print("🤖 Đang gửi yêu cầu tới Gemini...")
-#         response = send_command_to_gemini(user_prompt)
+#         print(f"🚀 Đang gửi yêu cầu '{user_prompt}' tới Gemini với chế độ tự động xác nhận...")
+#         response = run_gemini_with_tools(user_prompt)
 #         print("\n--- Phản hồi từ Gemini ---")
 #         print(response)
-#     else:
-#         print("Vui lòng cung cấp câu lệnh làm đối số.")
-#         print('Ví dụ: python3 send_to_gemini.py "Kể một câu chuyện cười"')
+#         print("\n✅ Hoàn thành.")
+
 # # import subprocess
 # # import sys
 
@@ -125,10 +125,10 @@ if __name__ == "__main__":
 # #         return "Lỗi: Câu lệnh không được để trống."
 
 # #     try:
-# #         # SỬA LỖI TẠI ĐÂY:
-# #         # Thay thế 'generate' bằng cờ '--prompt'
-# #         # Cấu trúc đúng là: gemini --prompt "câu lệnh của bạn"
-# #         command = ["gemini", "--prompt", prompt]
+# #         # ✅ SỬA LỖI QUAN TRỌNG:
+# #         # Thêm cờ '--sandbox=false' để ngăn Gemini cố gắng sử dụng công cụ
+# #         # và buộc nó phải trả về văn bản thuần túy.
+# #         command = ["gemini", "--prompt", prompt, "--sandbox=false"]
 
 # #         # Thực thi lệnh và chờ nó hoàn thành
 # #         result = subprocess.run(
@@ -136,17 +136,16 @@ if __name__ == "__main__":
 # #             capture_output=True,
 # #             text=True,
 # #             check=True,
-# #             # Thêm timeout để tránh treo nếu lệnh chạy quá lâu
-# #             timeout=120 
+# #             timeout=120  # Đặt thời gian chờ để tránh treo
 # #         )
 
-# #         # Trả về kết quả từ stdout
+# #         # Trả về kết quả từ stdout (kết quả thành công)
 # #         return result.stdout
 
 # #     except FileNotFoundError:
 # #         return "Lỗi: Không tìm thấy 'gemini' CLI. Hãy chắc chắn rằng nó đã được cài đặt và nằm trong PATH của hệ thống."
 # #     except subprocess.CalledProcessError as e:
-# #         # Nếu có lỗi từ CLI, nó sẽ được in ra stderr
+# #         # Trả về lỗi từ stderr để gỡ lỗi
 # #         error_message = f"Lỗi khi thực thi lệnh Gemini CLI:\n{e.stderr}"
 # #         return error_message
 # #     except subprocess.TimeoutExpired:
@@ -155,7 +154,6 @@ if __name__ == "__main__":
 # #         return f"Đã xảy ra một lỗi không mong muốn: {e}"
 
 # # if __name__ == "__main__":
-# #     # Lấy câu lệnh từ đối số dòng lệnh khi chạy file python
 # #     if len(sys.argv) > 1:
 # #         user_prompt = " ".join(sys.argv[1:])
 # #         print("🤖 Đang gửi yêu cầu tới Gemini...")
@@ -165,3 +163,60 @@ if __name__ == "__main__":
 # #     else:
 # #         print("Vui lòng cung cấp câu lệnh làm đối số.")
 # #         print('Ví dụ: python3 send_to_gemini.py "Kể một câu chuyện cười"')
+# # # import subprocess
+# # # import sys
+
+# # # def send_command_to_gemini(prompt: str) -> str:
+# # #     """
+# # #     Gửi một câu lệnh (prompt) đến Gemini CLI và trả về kết quả.
+
+# # #     Args:
+# # #         prompt: Chuỗi câu lệnh bạn muốn gửi đến Gemini.
+
+# # #     Returns:
+# # #         Kết quả đầu ra từ Gemini CLI.
+# # #     """
+# # #     if not prompt:
+# # #         return "Lỗi: Câu lệnh không được để trống."
+
+# # #     try:
+# # #         # SỬA LỖI TẠI ĐÂY:
+# # #         # Thay thế 'generate' bằng cờ '--prompt'
+# # #         # Cấu trúc đúng là: gemini --prompt "câu lệnh của bạn"
+# # #         command = ["gemini", "--prompt", prompt]
+
+# # #         # Thực thi lệnh và chờ nó hoàn thành
+# # #         result = subprocess.run(
+# # #             command,
+# # #             capture_output=True,
+# # #             text=True,
+# # #             check=True,
+# # #             # Thêm timeout để tránh treo nếu lệnh chạy quá lâu
+# # #             timeout=120 
+# # #         )
+
+# # #         # Trả về kết quả từ stdout
+# # #         return result.stdout
+
+# # #     except FileNotFoundError:
+# # #         return "Lỗi: Không tìm thấy 'gemini' CLI. Hãy chắc chắn rằng nó đã được cài đặt và nằm trong PATH của hệ thống."
+# # #     except subprocess.CalledProcessError as e:
+# # #         # Nếu có lỗi từ CLI, nó sẽ được in ra stderr
+# # #         error_message = f"Lỗi khi thực thi lệnh Gemini CLI:\n{e.stderr}"
+# # #         return error_message
+# # #     except subprocess.TimeoutExpired:
+# # #         return "Lỗi: Yêu cầu tới Gemini đã hết thời gian chờ."
+# # #     except Exception as e:
+# # #         return f"Đã xảy ra một lỗi không mong muốn: {e}"
+
+# # # if __name__ == "__main__":
+# # #     # Lấy câu lệnh từ đối số dòng lệnh khi chạy file python
+# # #     if len(sys.argv) > 1:
+# # #         user_prompt = " ".join(sys.argv[1:])
+# # #         print("🤖 Đang gửi yêu cầu tới Gemini...")
+# # #         response = send_command_to_gemini(user_prompt)
+# # #         print("\n--- Phản hồi từ Gemini ---")
+# # #         print(response)
+# # #     else:
+# # #         print("Vui lòng cung cấp câu lệnh làm đối số.")
+# # #         print('Ví dụ: python3 send_to_gemini.py "Kể một câu chuyện cười"')
