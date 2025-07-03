@@ -16,8 +16,8 @@ Danh sách công việc chi tiết để hoàn thành cuốn sách "Lập trình
 - [x] Tạo GitHub repository
 - [x] Viết plan.md chi tiết
 - [x] Tạo tasks.md (file này)
-- [ ] Setup GitHub Pages
-- [ ] Tạo cấu trúc thư mục cơ bản
+- [x] Setup GitHub Pages
+- [x] Tạo cấu trúc thư mục cơ bản
 - [ ] Viết README.md chi tiết
 - [ ] Tạo template cho các chương
 - [ ] Setup automated workflows (GitHub Actions)

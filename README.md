@@ -1,12 +1,17 @@
-# Lập trình Python cơ bản
+# 🐍 Lập trình Python cơ bản
 
-![Python Logo](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![GitHub](https://img.shields.io/github/license/taipm/python_book)
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow.svg)
+[![GitHub Stars](https://img.shields.io/github/stars/taipm/python_book?style=social)](https://github.com/taipm/python_book)
+[![GitHub Forks](https://img.shields.io/github/forks/taipm/python_book?style=social)](https://github.com/taipm/python_book/fork)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Live-brightgreen)](https://taipm.github.io/python_book/)
+
+> **Cuốn sách Python hoàn toàn miễn phí dành cho người mới bắt đầu** - Từ cơ bản đến thực hành với các dự án thực tế
+
+📚 **[Đọc online tại đây](https://taipm.github.io/python_book/)** 
 
 ## 📖 Giới thiệu
 
-Cuốn sách "Lập trình Python cơ bản" là tài liệu học Python dành cho người mới bắt đầu, được viết bằng tiếng Việt với các ví dụ thực tế và gần gũi. Sách được phát triển dưới dạng GitHub Docs để dễ dàng truy cập và cập nhật.
+"Lập trình Python cơ bản" là cuốn sách mã nguồn mở, hoàn toàn miễn phí dành cho những người muốn học lập trình Python từ con số 0. Cuốn sách được viết bằng tiếng Việt với ngôn ngữ dễ hiểu, nhiều ví dụ thực tế và bài tập phong phú.
 
 ## 🎯 Mục tiêu
 
