@@ -4,57 +4,55 @@ import sys
 def run_gemini_with_tools(prompt: str) -> str:
     """
     Gửi một câu lệnh đến Gemini CLI, cho phép nó sử dụng các công cụ
-    bằng cách sử dụng cờ --all_files.
-
-    Args:
-        prompt: Chuỗi câu lệnh yêu cầu Gemini thực hiện hành động.
-
-    Returns:
-        Kết quả đầu ra từ Gemini CLI.
+    và tự động chấp nhận các hành động.
     """
     if not prompt:
         return "Lỗi: Câu lệnh không được để trống."
 
     try:
-        # ✅ SỬA LỖI QUAN TRỌNG:
-        # Thay thế đối số "." bằng cờ "--all_files".
-        # Đây là cách đúng để cấp quyền cho tool dựa trên menu help của CLI.
         command = [
             "gemini",
             "--prompt", prompt,
             "--sandbox=true",
-            "--all_files"  # Cấp quyền truy cập vào các tệp trong thư mục hiện tại
+            "--all_files",
+            "--yolo"
         ]
+        
+        # Thêm cờ --debug để xem log chi tiết
+        # command.append("--debug")
 
-        # Thực thi lệnh và chờ nó hoàn thành
         result = subprocess.run(
             command,
             capture_output=True,
             text=True,
             check=True,
-            timeout=120
+            timeout=180
         )
-
-        return result.stdout
+        
+        # ✅ SỬA LỖI QUAN TRỌNG:
+        # Trả về cả stdout và stderr để không bỏ sót thông tin gỡ lỗi.
+        stdout_output = f"--- STDOUT ---\n{result.stdout}" if result.stdout else "--- STDOUT ---\n(Trống)"
+        stderr_output = f"--- STDERR ---\n{result.stderr}" if result.stderr else "--- STDERR ---\n(Trống)"
+        
+        return f"{stdout_output}\n\n{stderr_output}"
 
     except FileNotFoundError:
         return "Lỗi: Không tìm thấy 'gemini' CLI."
     except subprocess.CalledProcessError as e:
-        return f"Lỗi khi thực thi lệnh Gemini CLI:\n{e.stderr}"
+        # Khi có lỗi, cũng in ra cả stdout và stderr
+        return f"Lỗi khi thực thi lệnh Gemini CLI (Exit Code {e.returncode}):\n--- STDOUT ---\n{e.stdout}\n--- STDERR ---\n{e.stderr}"
     except Exception as e:
         return f"Đã xảy ra một lỗi không mong muốn: {e}"
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
         user_prompt = " ".join(sys.argv[1:])
-        print(f"🤖 Đang gửi yêu cầu '{user_prompt}' tới Gemini với quyền truy cập tool...")
+        print(f"🚀 Đang gửi yêu cầu '{user_prompt}' tới Gemini với chế độ tự động xác nhận...")
         response = run_gemini_with_tools(user_prompt)
         print("\n--- Phản hồi từ Gemini ---")
         print(response)
-        print("\n✅ Hãy kiểm tra thư mục của bạn để xem tệp đã được tạo chưa.")
-    else:
-        print("Vui lòng cung cấp câu lệnh làm đối số.")
-        print('Ví dụ: python3 send_to_gemini.py "Viết hàm tính giai thừa vào file factorial.py"')
+        print("\n✅ Hoàn thành.")
+        
 # import subprocess
 # import sys
 
