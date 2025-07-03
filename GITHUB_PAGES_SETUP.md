@@ -1,23 +1,30 @@
 # 🚀 Hướng dẫn Enable GitHub Pages
 
-## Bước 1: Truy cập GitHub Repository Settings
+## ✅ Cập nhật: GitHub Actions đã được setup!
 
+**GitHub Actions workflow đã được tạo và sẵn sàng tự động deploy website.**
+
+## 📋 Các bước kích hoạt
+
+### Bước 1: Truy cập Repository Settings
 1. Truy cập repository: `https://github.com/taipm/python_book`
 2. Click tab **"Settings"** (ở góc phải trên)
 3. Scroll xuống phần **"Pages"** ở sidebar bên trái
 
-## Bước 2: Configure GitHub Pages
-
-### Option 1: Deploy from docs/ folder (Recommended)
-1. Trong **"Source"** section:
-   - Chọn **"Deploy from a branch"**
-   - **Branch**: `main`
-   - **Folder**: `/docs`
+### Bước 2: Configure GitHub Pages Source
+1. Trong **"Source"** section, chọn:
+   - **"Deploy from a branch"**
+   - **Branch**: `gh-pages` (sẽ được tạo tự động sau lần build đầu tiên)
+   - **Folder**: `/ (root)`
 2. Click **"Save"**
 
-### Option 2: GitHub Actions (Advanced)
-1. Trong **"Source"** section:
-   - Chọn **"GitHub Actions"**
+### Bước 3: Chờ deployment hoàn thành
+1. GitHub Actions sẽ tự động:
+   - Build Jekyll site từ thư mục `docs/`
+   - Tạo branch `gh-pages` với static files
+   - Deploy lên GitHub Pages
+2. Kiểm tra tiến độ tại: https://github.com/taipm/python_book/actions
+3. Website sẽ accessible tại: **https://taipm.github.io/python_book/**
 2. GitHub sẽ tự động detect Jekyll và suggest workflow
 3. File workflow đã được tạo sẵn tại `.github/workflows/pages.yml`
 
