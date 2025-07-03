@@ -18,39 +18,45 @@ Cuốn sách này được thiết kế để dạy Python từ những kiến t
 
 ## 🚀 Bắt đầu ngay
 
-### [📘 Chương 1: Giới thiệu về Python](chapters/chapter01.html)
+### [📘 Chương 1: Giới thiệu về Python](chapters/chapter01.md)
+
 Tìm hiểu Python là gì và tại sao nên học Python
 
-### [🔧 Chương 2: Cài đặt môi trường](chapters/chapter02.html)  
+### [🔧 Chương 2: Cài đặt môi trường](chapters/chapter02.md)  
+
 Hướng dẫn cài đặt Python và các công cụ cần thiết
 
-### [📝 Chương 3: Cú pháp cơ bản](chapters/chapter03.html)
+### [📝 Chương 3: Cú pháp cơ bản](chapters/chapter03.md)
+
 Học cú pháp Python đầu tiên và làm việc với biến
 
 ## 📚 Danh mục đầy đủ
 
 ### Phần I: Nền tảng
-1. [Giới thiệu về Python](chapters/chapter01.html)
-2. [Cài đặt môi trường](chapters/chapter02.html)  
-3. [Cú pháp cơ bản và biến](chapters/chapter03.html)
-4. [Chuỗi (Strings)](chapters/chapter04.html)
-5. [Danh sách (Lists)](chapters/chapter05.html)
-6. [Tuple và Dictionary](chapters/chapter06.html)
-7. [Câu lệnh điều kiện](chapters/chapter07.html)
-8. [Vòng lặp](chapters/chapter08.html)
+
+1. [Giới thiệu về Python](chapters/chapter01.md)
+2. [Cài đặt môi trường](chapters/chapter02.md)  
+3. [Cú pháp cơ bản và biến](chapters/chapter03.md)
+4. [Chuỗi (Strings)](chapters/chapter04.md)
+5. [Danh sách (Lists)](chapters/chapter05.md)
+6. [Tuple và Dictionary](chapters/chapter06.md)
+7. [Câu lệnh điều kiện](chapters/chapter07.md)
+8. [Vòng lặp](chapters/chapter08.md)
 
 ### Phần II: Nâng cao  
-9. [Hàm (Functions)](chapters/chapter09.html)
-10. [Xử lý ngoại lệ](chapters/chapter10.html)
-11. [Làm việc với file](chapters/chapter11.html)
-12. [Module và Package](chapters/chapter12.html)
-13. [Lập trình hướng đối tượng](chapters/chapter13.html)
-14. [Thư viện phổ biến](chapters/chapter14.html)
+
+9. [Hàm (Functions)](chapters/chapter09.md)
+10. [Xử lý ngoại lệ](chapters/chapter10.md)
+11. [Làm việc với file](chapters/chapter11.md)
+12. [Module và Package](chapters/chapter12.md)
+13. [Lập trình hướng đối tượng](chapters/chapter13.md)
+14. [Thư viện phổ biến](chapters/chapter14.md)
 
 ### Phần III: Dự án thực hành
-15. [Dự án 1: Máy tính đơn giản](projects/calculator.html)
-16. [Dự án 2: Quản lý danh bạ](projects/contact-manager.html)  
-17. [Dự án 3: Web scraper](projects/web-scraper.html)
+
+15. [Dự án 1: Máy tính đơn giản](projects/calculator.md)
+16. [Dự án 2: Quản lý danh bạ](projects/contact-manager.md)  
+17. [Dự án 3: Web scraper](projects/web-scraper.md)
 
 ## 🎯 Đường dẫn học tập
 

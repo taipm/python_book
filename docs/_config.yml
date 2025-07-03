@@ -4,6 +4,8 @@ description: "Sách học Python dành cho người mới bắt đầu - Miễn 
 
 # GitHub repository
 repository: taipm/python_book
+baseurl: /python_book
+url: https://taipm.github.io
 
 # Navigation
 navbar:
@@ -28,15 +30,12 @@ plugins:
 markdown: kramdown
 highlighter: rouge
 
-# Syntax highlighting
+# Syntax highlighting  
 kramdown:
+  input: GFM
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
 
 # SEO settings
 lang: vi-VN
