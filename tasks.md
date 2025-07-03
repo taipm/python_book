@@ -1,7 +1,7 @@
 # Tasks - Lập trình Python cơ bản
 
 ## 🎯 Task Overview
-Danh sách công việc chi tiết để hoàn thành cuốn sách "Lập trình Python cơ bản" với GitHub Docs.
+Danh sách công việc chi tiết để hoàn thành cuốn sách "Lập trình Python cơ bản" theo kế hoạch đã cập nhật.
 
 ## 📋 Current Status
 - **Start Date**: 03/07/2025
@@ -10,361 +10,111 @@ Danh sách công việc chi tiết để hoàn thành cuốn sách "Lập trình
 
 ---
 
-## 🏗️ PHASE 1: Setup & Planning (Tuần 1-2)
+## 🏗️ PHASE 1: Setup & Planning (Tuần 1: 03/07 - 09/07)
 
-### Week 1: Project Setup
 - [x] Tạo GitHub repository
-- [x] Viết plan.md chi tiết
-- [x] Tạo tasks.md (file này)
-- [x] Setup GitHub Pages
-- [x] Tạo cấu trúc thư mục cơ bản
-- [ ] Viết README.md chi tiết
-- [ ] Tạo template cho các chương
-- [ ] Setup automated workflows (GitHub Actions)
-
-### Week 2: Content Framework
-- [ ] Tạo outline chi tiết cho từng chương
-- [ ] Viết style guide cho nội dung
-- [ ] Tạo template cho code examples
-- [ ] Setup code testing framework
-- [ ] Viết chương mẫu đầu tiên (Chương 1)
-- [ ] Review và feedback chương mẫu
+- [x] Cập nhật `plan.md` chi tiết
+- [x] Cập nhật `tasks.md` (file này)
+- [x] Setup GitHub Pages và workflow tự động build
+- [ ] Viết `README.md` chi tiết, giới thiệu về sách và hướng dẫn đóng góp.
+- [ ] Tạo `chapter-template.md` để thống nhất cấu trúc các chương.
+- [ ] Viết `CONTRIBUTING.md` hướng dẫn cách đóng góp cho dự án.
 
 ---
 
-## 📝 PHASE 2: Core Content (Tuần 3-8)
+## 📝 PHASE 2: Viết nội dung cốt lõi (Tuần 2-11)
 
-### Week 3: Chương 1-2 (Giới thiệu)
+**Tuần 2 (10/07 - 16/07): Chương 1 & 2**
 - [ ] **Chương 1: Giới thiệu về Python**
-  - [ ] Viết phần "Python là gì"
-  - [ ] Lịch sử và triết lý Python
-  - [ ] Ứng dụng thực tế
-  - [ ] So sánh với ngôn ngữ khác
-  - [ ] Review và chỉnh sửa
+  - [ ] Viết nội dung chi tiết cho tất cả các mục.
+  - [ ] Tìm và tạo hình ảnh minh họa (nếu cần).
+- [ ] **Chương 2: Cài đặt và Thiết lập môi trường**
+  - [ ] Viết hướng dẫn cài đặt cho Windows, macOS, Linux.
+  - [ ] Chụp ảnh màn hình các bước cài đặt.
+  - [ ] Tạo code example cho "Hello, World!".
 
-- [ ] **Chương 2: Cài đặt môi trường**
-  - [ ] Hướng dẫn cài đặt cho Windows
-  - [ ] Hướng dẫn cài đặt cho macOS
-  - [ ] Hướng dẫn cài đặt cho Linux
-  - [ ] Giới thiệu IDE/Editor
-  - [ ] Virtual environment setup
-  - [ ] Test installation guides
+**Tuần 3 (17/07 - 23/07): Chương 3 & 4**
+- [ ] **Chương 3: Cú pháp cơ bản và Biến**
+  - [ ] Viết nội dung và 5-7 ví dụ code.
+  - [ ] Soạn 10 bài tập thực hành.
+- [ ] **Chương 4: Chuỗi (Strings)**
+  - [ ] Viết nội dung và 5-7 ví dụ code.
+  - [ ] Soạn 10 bài tập thực hành.
 
-### Week 4: Chương 3-4 (Cú pháp cơ bản)
-- [ ] **Chương 3: Cú pháp cơ bản**
-  - [ ] Python syntax fundamentals
-  - [ ] Variables và naming conventions
-  - [ ] Basic data types
-  - [ ] Input/Output operations
-  - [ ] 10 code examples
-  - [ ] 15 practice exercises
+**Tuần 4 (24/07 - 30/07): Chương 5**
+- [ ] **Chương 5: Cấu trúc dữ liệu (Lists, Tuples, Sets)**
+  - [ ] Viết nội dung chi tiết cho từng loại.
+  - [ ] So sánh ưu/nhược điểm và trường hợp sử dụng.
+  - [ ] 10-12 ví dụ code và 15 bài tập.
 
-- [ ] **Chương 4: Strings**
-  - [ ] String creation và manipulation
-  - [ ] String methods
-  - [ ] String formatting (f-strings, format())
-  - [ ] Escape characters
-  - [ ] 8 code examples
-  - [ ] 12 practice exercises
+**Tuần 5 (31/07 - 06/08): Chương 6 & 7**
+- [ ] **Chương 6: Dictionaries**
+  - [ ] Viết nội dung và 5-7 ví dụ code.
+  - [ ] Soạn 10 bài tập thực hành.
+- [ ] **Chương 7: Câu lệnh điều kiện**
+  - [ ] Viết nội dung và 5-7 ví dụ code.
+  - [ ] Soạn 10 bài tập thực hành.
 
-### Week 5: Chương 5-6 (Data Structures)
-- [ ] **Chương 5: Lists**
-  - [ ] List creation và manipulation
-  - [ ] Indexing và slicing
-  - [ ] List methods
-  - [ ] Basic list comprehension
-  - [ ] 10 code examples
-  - [ ] 15 practice exercises
+**Tuần 6 (07/08 - 13/08): Chương 8**
+- [ ] **Chương 8: Vòng lặp**
+  - [ ] Viết nội dung chi tiết về `for`, `while`.
+  - [ ] 8-10 ví dụ code (bao gồm cả nested loops).
+  - [ ] Soạn 15 bài tập thực hành.
 
-- [ ] **Chương 6: Tuples & Dictionaries**
-  - [ ] Tuple operations
-  - [ ] Dictionary operations
-  - [ ] When to use each type
-  - [ ] 8 code examples
-  - [ ] 12 practice exercises
+**Tuần 7 (14/08 - 20/08): Chương 9**
+- [ ] **Chương 9: Hàm (Functions)**
+  - [ ] Viết nội dung từ cơ bản đến `*args`, `**kwargs`.
+  - [ ] Giải thích về scope, docstrings, type hints.
+  - [ ] 10-12 ví dụ code và 15 bài tập.
 
-### Week 6: Chương 7-8 (Control Flow)
-- [ ] **Chương 7: Conditional Statements**
-  - [ ] if, elif, else statements
-  - [ ] Comparison và logical operators
-  - [ ] Nested conditions
-  - [ ] Ternary operator
-  - [ ] 8 code examples
-  - [ ] 15 practice exercises
+**Tuần 8 (21/08 - 27/08): Chương 10 & 11**
+- [ ] **Chương 10: Xử lý ngoại lệ**
+  - [ ] Viết nội dung và các ví dụ thực tế.
+- [ ] **Chương 11: Làm việc với File**
+  - [ ] Viết nội dung và ví dụ với file `.txt`, `.csv`, `.json`.
+  - [ ] Soạn 10 bài tập tổng hợp.
 
-- [ ] **Chương 8: Loops**
-  - [ ] for loops và while loops
-  - [ ] range() function
-  - [ ] break và continue
-  - [ ] Nested loops
-  - [ ] 10 code examples
-  - [ ] 20 practice exercises
+**Tuần 9 (28/08 - 03/09): Chương 12**
+- [ ] **Chương 12: Module và Package**
+  - [ ] Viết nội dung và ví dụ tạo module, package.
+  - [ ] Giới thiệu các thư viện chuẩn quan trọng.
 
-### Week 7-8: Review & Polish Basics
-- [ ] Review toàn bộ 8 chương đầu
-- [ ] Kiểm tra tính nhất quán
-- [ ] Test tất cả code examples
-- [ ] Cập nhật cross-references
-- [ ] Beta test với 2-3 người đọc
-- [ ] Incorporate feedback
+**Tuần 10 (04/09 - 10/09): Chương 13**
+- [ ] **Chương 13: Lập trình hướng đối tượng (OOP)**
+  - [ ] Viết nội dung chi tiết, giải thích dễ hiểu các khái niệm.
+  - [ ] 10-12 ví dụ code minh họa.
+  - [ ] Soạn 10 bài tập về OOP.
+
+**Tuần 11 (11/09 - 17/09): Chương 14**
+- [ ] **Chương 14: Giới thiệu các thư viện phổ biến**
+  - [ ] Viết giới thiệu và ví dụ cơ bản cho `requests`, `BeautifulSoup`, `Pillow`, `Matplotlib`.
 
 ---
 
-## 🚀 PHASE 3: Advanced Content (Tuần 9-12)
+## 🚀 PHASE 3: Dự án thực hành (Tuần 12-13)
 
-### Week 9: Chương 9-10 (Functions & Error Handling)
-- [ ] **Chương 9: Functions**
-  - [ ] Function definition và calling
-  - [ ] Parameters và arguments
-  - [ ] Return values
-  - [ ] Scope (local vs global)
-  - [ ] Lambda functions
-  - [ ] 12 code examples
-  - [ ] 18 practice exercises
+**Tuần 12 (18/09 - 24/09): Dự án 1 & 2**
+- [ ] **Chương 15: Dự án 1 - To-Do List App**
+  - [ ] Viết code và giải thích chi tiết từng bước.
+- [ ] **Chương 16: Dự án 2 - Web Scraper**
+  - [ ] Viết code và giải thích chi tiết.
 
-- [ ] **Chương 10: Exception Handling**
-  - [ ] try, except, finally
-  - [ ] Common exception types
-  - [ ] Custom exceptions
-  - [ ] Best practices
-  - [ ] 8 code examples
-  - [ ] 10 practice exercises
-
-### Week 10: Chương 11-12 (Files & Modules)
-- [ ] **Chương 11: File Operations**
-  - [ ] Reading và writing files
-  - [ ] File modes
-  - [ ] Context managers (with statement)
-  - [ ] Working with CSV, JSON
-  - [ ] 10 code examples
-  - [ ] 15 practice exercises
-
-- [ ] **Chương 12: Modules & Packages**
-  - [ ] Importing modules
-  - [ ] Creating custom modules
-  - [ ] Packages và __init__.py
-  - [ ] Standard library overview
-  - [ ] 8 code examples
-  - [ ] 12 practice exercises
-
-### Week 11: Chương 13 (OOP)
-- [ ] **Chương 13: Object-Oriented Programming**
-  - [ ] Classes và objects
-  - [ ] Attributes và methods
-  - [ ] Constructor (__init__)
-  - [ ] Basic inheritance
-  - [ ] Encapsulation concepts
-  - [ ] 15 code examples
-  - [ ] 20 practice exercises
-
-### Week 12: Chương 14 (Libraries)
-- [ ] **Chương 14: Working with Libraries**
-  - [ ] requests library (HTTP)
-  - [ ] datetime library
-  - [ ] os và sys modules
-  - [ ] random module
-  - [ ] Installing packages with pip
-  - [ ] 12 code examples
-  - [ ] 15 practice exercises
+**Tuần 13 (25/09 - 01/10): Dự án 3**
+- [ ] **Chương 17: Dự án 3 - Ứng dụng Web với Flask**
+  - [ ] Viết code và giải thích chi tiết.
 
 ---
 
-## 🔨 PHASE 4: Practical Projects (Tuần 13-15)
+## ✅ PHASE 4: Review & Hoàn thiện (Tuần 14-15)
 
-### Week 13: Project 1 - Calculator
-- [ ] **Chương 15: Simple Calculator Project**
-  - [ ] Project planning và design
-  - [ ] Console interface design
-  - [ ] Basic arithmetic operations
-  - [ ] Advanced operations
-  - [ ] Error handling
-  - [ ] Code organization
-  - [ ] Testing the calculator
-  - [ ] Deployment instructions
+**Tuần 14 (02/10 - 08/10): Review và Chỉnh sửa**
+- [ ] Đọc lại và review toàn bộ nội dung sách.
+- [ ] Chỉnh sửa lỗi chính tả, ngữ pháp.
+- [ ] Kiểm tra lại tất cả các ví dụ code.
+- [ ] Nhờ cộng đồng review chéo (nếu có thể).
 
-### Week 14: Project 2 - Contact Manager
-- [ ] **Chương 16: Contact Manager Project**
-  - [ ] Project architecture
-  - [ ] CRUD operations design
-  - [ ] File-based data storage
-  - [ ] Menu navigation system
-  - [ ] Data validation
-  - [ ] Search functionality
-  - [ ] Testing the application
-  - [ ] User documentation
-
-### Week 15: Project 3 - Web Scraper
-- [ ] **Chương 17: Web Scraper Project**
-  - [ ] Introduction to web scraping
-  - [ ] requests và BeautifulSoup setup
-  - [ ] HTML parsing techniques
-  - [ ] Data extraction
-  - [ ] Data storage (CSV/JSON)
-  - [ ] Error handling for web requests
-  - [ ] Ethics và best practices
-  - [ ] Testing the scraper
-
----
-
-## 🎨 PHASE 5: Finalization (Tuần 16)
-
-### Week 16: Final Polish
-- [ ] **Content Review**
-  - [ ] Proofread all chapters
-  - [ ] Check code examples work
-  - [ ] Verify all links
-  - [ ] Consistency check
-  - [ ] Grammar và spelling
-
-- [ ] **Documentation Site**
-  - [ ] Setup GitHub Pages theme
-  - [ ] Create navigation structure
-  - [ ] Add search functionality
-  - [ ] Mobile responsiveness
-  - [ ] Performance optimization
-
-- [ ] **Final Testing**
-  - [ ] Beta test với 5-10 người
-  - [ ] Collect và incorporate feedback
-  - [ ] Fix any remaining issues
-  - [ ] Create final release
-
----
-
-## 📊 Progress Tracking
-
-### Completion Metrics
-- **Chapters Completed**: 0/17 (0%)
-- **Code Examples**: 0/150+ (0%)
-- **Practice Exercises**: 0/200+ (0%)
-- **Projects**: 0/3 (0%)
-
-### Weekly Goals
-| Week | Target | Status |
-|------|--------|--------|
-| 1-2  | Setup & Planning | 🟡 In Progress |
-| 3    | Chapters 1-2 | ⚪ Not Started |
-| 4    | Chapters 3-4 | ⚪ Not Started |
-| 5    | Chapters 5-6 | ⚪ Not Started |
-| 6    | Chapters 7-8 | ⚪ Not Started |
-| 7-8  | Review Basics | ⚪ Not Started |
-| 9    | Chapters 9-10 | ⚪ Not Started |
-| 10   | Chapters 11-12 | ⚪ Not Started |
-| 11   | Chapter 13 | ⚪ Not Started |
-| 12   | Chapter 14 | ⚪ Not Started |
-| 13   | Project 1 | ⚪ Not Started |
-| 14   | Project 2 | ⚪ Not Started |
-| 15   | Project 3 | ⚪ Not Started |
-| 16   | Finalization | ⚪ Not Started |
-
-### Legend
-- 🟢 Completed
-- 🟡 In Progress  
-- 🔴 Delayed
-- ⚪ Not Started
-
----
-
-## 🔄 Daily Routine
-
-### Thời gian làm việc đề xuất: 2-3 giờ/ngày
-
-#### Morning (1-1.5 giờ):
-- [ ] Review kế hoạch ngày
-- [ ] Viết nội dung mới
-- [ ] Tạo code examples
-
-#### Afternoon (1-1.5 giờ):
-- [ ] Review và edit nội dung
-- [ ] Test code examples
-- [ ] Tạo bài tập
-
-#### Evening (30 phút):
-- [ ] Update progress
-- [ ] Plan ngày hôm sau
-- [ ] Backup work
-
----
-
-## 🎯 Quality Checkpoints
-
-### Mỗi chương phải có:
-- [ ] Mục tiêu học tập rõ ràng
-- [ ] Ít nhất 8-15 code examples
-- [ ] 10-20 bài tập thực hành
-- [ ] Tóm tắt cuối chương
-- [ ] Links tham khảo thêm
-
-### Code Quality:
-- [ ] Tất cả code phải chạy được
-- [ ] Comments bằng tiếng Việt
-- [ ] Consistent coding style
-- [ ] Error-free execution
-
-### Content Quality:
-- [ ] Ngôn ngữ rõ ràng, dễ hiểu
-- [ ] Ví dụ thực tế, phù hợp
-- [ ] Logic progression từ dễ đến khó
-- [ ] Cross-references giữa các chương
-
----
-
-## 📞 Support & Resources
-
-### Tools Being Used:
-- **Writing**: VS Code + Markdown
-- **Version Control**: Git + GitHub
-- **Documentation**: GitHub Pages
-- **Code Testing**: Python interpreter
-- **Design**: Canva (cho diagrams)
-
-### External Resources:
-- Python.org documentation
-- Real Python tutorials
-- Stack Overflow
-- GitHub community discussions
-
----
-
-## 🚨 Risk Management
-
-### Potential Risks:
-1. **Time Overrun**: Có thể mất nhiều thời gian hơn dự kiến
-   - *Mitigation*: Buffer time trong kế hoạch, daily progress tracking
-
-2. **Technical Issues**: GitHub Pages setup issues
-   - *Mitigation*: Early setup và testing, backup plans
-
-3. **Content Quality**: Nội dung không đạt chất lượng mong muốn
-   - *Mitigation*: Regular reviews, beta testing, feedback integration
-
-4. **Scope Creep**: Thêm quá nhiều nội dung
-   - *Mitigation*: Stick to original plan, document extra ideas for future versions
-
-### Contingency Plans:
-- Nếu delay 1 tuần: Skip một số bài tập không quan trọng
-- Nếu delay 2 tuần: Combine một số chương nhỏ
-- Nếu delay 3+ tuần: Release MVP version trước, update sau
-
----
-
-## 📈 Success Metrics
-
-### Launch Targets:
-- [ ] 17 chapters hoàn chỉnh
-- [ ] 150+ working code examples  
-- [ ] 200+ practice exercises
-- [ ] 3 complete projects
-- [ ] Functioning documentation site
-- [ ] Mobile-friendly design
-
-### Post-Launch Goals:
-- 100+ GitHub stars trong tháng đầu
-- 50+ forks
-- 10+ contributors
-- Positive feedback từ community
-- Được mention trong Python learning resources
-
----
-
-*Last Updated: 03/07/2025*
+**Tuần 15 (09/10 - 15/10): Xuất bản**
+- [ ] Hoàn thiện các trang giới thiệu, mục lục trên GitHub Pages.
+- [ ] Kiểm tra lại giao diện trên mobile và desktop.
+- [ ] Chính thức xuất bản và chia sẻ dự án.
+- [ ] Lập kế hoạch cho các phiên bản cập nhật trong tương lai.
