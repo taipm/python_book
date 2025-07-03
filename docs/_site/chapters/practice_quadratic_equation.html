@@ -7,13 +7,13 @@
     <meta name="author" content="Tai PM">
     
     <!-- SEO Meta Tags -->
-    <meta property="og:title" content="Chương 2: Cài đặt môi trường">
+    <meta property="og:title" content="Bài tập: Giải phương trình bậc hai">
     <meta property="og:description" content="Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="http://localhost:4000/python_book/chapters/chapter02.html">
+    <meta property="og:url" content="http://localhost:4000/python_book/chapters/practice_quadratic_equation.html">
     <meta property="og:image" content="http://localhost:4000/python_book/assets/images/python-book-cover.png">
     
-    <title>Chương 2: Cài đặt môi trường</title>
+    <title>Bài tập: Giải phương trình bậc hai</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -169,7 +169,7 @@
             
         </div>
         
-        <h1 class="chapter-title">Chương 2: Cài đặt môi trường</h1>
+        <h1 class="chapter-title">Bài tập: Giải phương trình bậc hai</h1>
         
         
         
@@ -182,92 +182,98 @@
     
     <!-- Chapter Content -->
     <div class="chapter-body">
-        <h1 id="chương-2-cài-đặt-môi-trường">Chương 2: Cài đặt môi trường</h1>
+        <h1 id="bài-tập-giải-phương-trình-bậc-hai">Bài tập: Giải phương trình bậc hai</h1>
 
-<h2 id="-mục-tiêu-học-tập">🎯 Mục tiêu học tập</h2>
+<h3 id="đề-bài">Đề bài</h3>
 
-<p>Sau khi hoàn thành chương này, bạn sẽ có thể:</p>
+<p>Viết một chương trình Python để giải và biện luận nghiệm của phương trình bậc hai có dạng tổng quát:</p>
 
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cài đặt Python trên máy tính của bạn</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Thiết lập môi trường phát triển</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Chạy chương trình Python đầu tiên</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Làm quen với Python IDLE và các editor</li>
-</ul>
+\[ax^2 + bx + c = 0\]
 
-<h2 id="-kiến-thức-cần-có">📖 Kiến thức cần có</h2>
-
-<ul>
-  <li>Hoàn thành <a href="/python_book/chapters/chapter01.html">Chương 1: Giới thiệu về Python</a></li>
-  <li>Máy tính có kết nối internet</li>
-  <li>Quyền admin để cài đặt phần mềm</li>
-</ul>
-
-<h2 id="-cài-đặt-python">🔧 Cài đặt Python</h2>
-
-<h3 id="windows">Windows</h3>
+<p><strong>Yêu cầu:</strong></p>
 
 <ol>
-  <li>Truy cập <a href="https://python.org">python.org</a></li>
-  <li>Click “Download Python 3.x.x”</li>
-  <li>Chạy file installer</li>
-  <li><strong>Quan trọng</strong>: Check “Add Python to PATH”</li>
-  <li>Click “Install Now”</li>
+  <li>Chương trình cho phép người dùng nhập vào 3 hệ số <code class="language-plaintext highlighter-rouge">a</code>, <code class="language-plaintext highlighter-rouge">b</code>, và <code class="language-plaintext highlighter-rouge">c</code> từ bàn phím.</li>
+  <li>Chương trình phải xử lý trường hợp <code class="language-plaintext highlighter-rouge">a = 0</code> (phương trình trở thành bậc nhất).</li>
+  <li>Dựa vào giá trị của biệt thức (delta), hãy biện luận các trường hợp nghiệm của phương trình:
+    <ul>
+      <li><strong>Delta ((\Delta))</strong> được tính theo công thức: (\Delta = b^2 - 4ac)</li>
+      <li>Nếu (\Delta &gt; 0): Phương trình có 2 nghiệm thực phân biệt.</li>
+      <li>Nếu (\Delta = 0): Phương trình có nghiệm kép.</li>
+      <li>Nếu (\Delta &lt; 0): Phương trình có 2 nghiệm phức.</li>
+    </ul>
+  </li>
 </ol>
 
-<h3 id="macos">macOS</h3>
+<h3 id="lời-giải-tham-khảo">Lời giải tham khảo</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Sử dụng Homebrew (recommended)</span>
-brew <span class="nb">install </span>python
+<p>Dưới đây là một đoạn code Python hoàn chỉnh để giải quyết bài toán trên.</p>
 
-<span class="c"># Hoặc download từ python.org</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">cmath</span>
+
+<span class="k">def</span> <span class="nf">solve_quadratic_equation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="s">"""
+    Hàm giải phương trình bậc hai ax^2 + bx + c = 0 và biện luận nghiệm.
+    """</span>
+    <span class="c1"># Trường hợp a = 0, phương trình trở thành bậc nhất: bx + c = 0
+</span>    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">"Kết luận: Phương trình có vô số nghiệm."</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">"Kết luận: Phương trình vô nghiệm."</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">c</span> <span class="o">/</span> <span class="n">b</span>
+            <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Phương trình bậc nhất có một nghiệm duy nhất: x = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="c1"># Tính delta
+</span>    <span class="n">delta</span> <span class="o">=</span> <span class="p">(</span><span class="n">b</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span><span class="p">)</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Biệt thức delta = </span><span class="si">{</span><span class="n">delta</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+
+    <span class="c1"># Biện luận nghiệm dựa trên delta
+</span>    <span class="k">if</span> <span class="n">delta</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">delta</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">delta</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Kết luận: Phương trình có 2 nghiệm thực phân biệt:"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"x1 = </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"x2 = </span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">delta</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Kết luận: Phương trình có nghiệm kép: x1 = x2 = </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Sử dụng thư viện cmath để tính căn bậc hai của số âm (nghiệm phức)
+</span>        <span class="n">x1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">cmath</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+        <span class="n">x2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">cmath</span><span class="p">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">delta</span><span class="p">))</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Kết luận: Phương trình có 2 nghiệm phức:"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"x1 = </span><span class="si">{</span><span class="n">x1</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"x2 = </span><span class="si">{</span><span class="n">x2</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">'__main__'</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"--- CHƯƠNG TRÌNH GIẢI PHƯƠNG TRÌNH BẬC 2 ---"</span><span class="p">)</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Nhập hệ số a: "</span><span class="p">))</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Nhập hệ số b: "</span><span class="p">))</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Nhập hệ số c: "</span><span class="p">))</span>
+        
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="se">\n</span><span class="s">Giải phương trình: </span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s">x^2 + </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s">x + </span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s"> = 0"</span><span class="p">)</span>
+        <span class="n">solve_quadratic_equation</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+    <span class="k">except</span> <span class="nb">ValueError</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"Lỗi: Vui lòng chỉ nhập số!"</span><span class="p">)</span>
+
 </code></pre></div></div>
 
-<h3 id="linux">Linux</h3>
+<p><strong>Giải thích code:</strong></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ubuntu/Debian</span>
-<span class="nb">sudo </span>apt update
-<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip
-
-<span class="c"># CentOS/RHEL</span>
-<span class="nb">sudo </span>yum <span class="nb">install </span>python3 python3-pip
-</code></pre></div></div>
-
-<h2 id="-kiểm-tra-cài-đặt">✅ Kiểm tra cài đặt</h2>
-
-<p>Mở Terminal/Command Prompt và chạy:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">--version</span>
-<span class="c"># hoặc</span>
-python3 <span class="nt">--version</span>
-</code></pre></div></div>
-
-<p>Nếu thấy “Python 3.x.x” là thành công!</p>
-
-<h2 id="-chương-trình-đầu-tiên">🚀 Chương trình đầu tiên</h2>
-
-<p>Tạo file <code class="language-plaintext highlighter-rouge">hello.py</code>:</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Xin chào, Python!"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Tôi đã cài đặt thành công!"</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>Chạy:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python hello.py
-</code></pre></div></div>
-
-<h2 id="️-chương-tiếp-theo">➡️ Chương tiếp theo</h2>
-
-<p>Trong <a href="chapter03.md">Chương 3: Cú pháp cơ bản</a>, chúng ta sẽ học:</p>
 <ul>
-  <li>Variables và data types</li>
-  <li>Input/Output operations</li>
-  <li>Comments và documentation</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">import cmath</code></strong>: Chúng ta import thư viện <code class="language-plaintext highlighter-rouge">cmath</code> (complex math) để có thể tính toán căn bậc hai của số âm, vốn là trường hợp cho ra nghiệm phức.</li>
+  <li><strong>Hàm <code class="language-plaintext highlighter-rouge">solve_quadratic_equation</code></strong>: Đóng gói logic chính vào một hàm để dễ dàng tái sử dụng và quản lý.</li>
+  <li><strong>Xử lý <code class="language-plaintext highlighter-rouge">a = 0</code></strong>: Đây là bước quan trọng để đảm bảo chương trình chạy đúng trong mọi trường hợp.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">if __name__ == '__main__'</code></strong>: Khối lệnh này đảm bảo rằng phần code yêu cầu người dùng nhập chỉ chạy khi file được thực thi trực tiếp, không phải khi được import như một module.</li>
+  <li><strong><code class="language-plaintext highlighter-rouge">try...except</code></strong>: Bẫy lỗi <code class="language-plaintext highlighter-rouge">ValueError</code> phòng trường hợp người dùng nhập vào không phải là số.</li>
 </ul>
-
-<hr />
-
-<p><em>Chương đang được phát triển…</em></p>
 
     </div>
     
@@ -309,7 +315,7 @@ python3 <span class="nt">--version</span>
                 </button>
             </div>
             <div class="feedback-links">
-                <a href="https://github.com/taipm/python_book/issues/new?title=Feedback%20for%20Ch%C6%B0%C6%A1ng+2%3A+C%C3%A0i+%C4%91%E1%BA%B7t+m%C3%B4i+tr%C6%B0%E1%BB%9Dng" class="feedback-link">
+                <a href="https://github.com/taipm/python_book/issues/new?title=Feedback%20for%20B%C3%A0i+t%E1%BA%ADp%3A+Gi%E1%BA%A3i+ph%C6%B0%C6%A1ng+tr%C3%ACnh+b%E1%BA%ADc+hai" class="feedback-link">
                     <i class="fas fa-bug"></i> Báo lỗi
                 </a>
                 <a href="https://github.com/taipm/python_book/discussions" class="feedback-link">
@@ -329,10 +335,10 @@ python3 <span class="nt">--version</span>
 
 <!-- Floating Action Buttons -->
 <div class="floating-actions">
-    <button class="fab bookmark-btn" title="Đánh dấu trang" data-chapter="/chapters/chapter02.html">
+    <button class="fab bookmark-btn" title="Đánh dấu trang" data-chapter="/chapters/practice_quadratic_equation.html">
         <i class="fas fa-bookmark"></i>
     </button>
-    <button class="fab notes-btn" title="Ghi chú" data-chapter="/chapters/chapter02.html">
+    <button class="fab notes-btn" title="Ghi chú" data-chapter="/chapters/practice_quadratic_equation.html">
         <i class="fas fa-sticky-note"></i>
     </button>
     <button class="fab share-btn" title="Chia sẻ">
