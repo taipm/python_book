@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source">
+    <meta name="author" content="{"name"=>"Tai PM", "email"=>"taipm@example.com", "url"=>"https://github.com/taipm"}">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Chương 2: Cài đặt môi trường">
+    <meta property="og:description" content="Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taipm.github.io/python_book/chapters/chapter02.html">
+    <meta property="og:image" content="https://taipm.github.io/python_book/assets/images/python-book-cover.png">
+    
+    <title>Chương 2: Cài đặt môi trường</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/python_book/assets/css/main.css">
+    <link rel="stylesheet" href="/python_book/assets/css/syntax.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/python_book/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="/python_book/assets/images/favicon.png">
+    
+    <!-- Theme Script (Load early to prevent flash) -->
+    <script>
+        // Load theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="site-logo">
+                    <a href="/python_book/" class="logo-link">
+                        <div class="logo-icon">🐍</div>
+                        <div class="logo-text">
+                            <span class="logo-title">Python Book</span>
+                            <span class="logo-subtitle">Lập trình cơ bản</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="/python_book/" class="nav-link">Trang chủ</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Chương <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/python_book/chapters/chapter01.html">Chương 1: Giới thiệu</a></li>
+                                <li><a href="/python_book/chapters/chapter02.html">Chương 2: Cài đặt</a></li>
+                                <li><a href="/python_book/chapters/">Tất cả chương</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/python_book/projects/" class="nav-link">Dự án</a></li>
+                        <li><a href="/python_book/code-examples/" class="nav-link">Code</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Search -->
+                    <button class="search-toggle" aria-label="Tìm kiếm">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" aria-label="Chuyển đổi theme">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </button>
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/taipm/python_book" class="github-link" aria-label="GitHub Repository">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Tìm kiếm nội dung..." autocomplete="off">
+                <button class="search-close" aria-label="Đóng tìm kiếm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Main Layout -->
+    <div class="site-layout">
+        <!-- Sidebar -->
+        
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Progress -->
+                <div class="reading-progress">
+                    <div class="progress-header">
+                        <h3>Tiến độ học tập</h3>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                
+                <!-- Table of Contents -->
+                <div class="toc-container">
+                    <h3>Mục lục</h3>
+                    <div class="toc-content"></div>
+                </div>
+                
+                <!-- Chapter Navigation -->
+                <div class="chapter-nav">
+                    <h3>Điều hướng</h3>
+                    <div class="nav-buttons">
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        
+        <!-- Main Content -->
+        <main id="main-content" class="main-content" role="main">
+            <div class="content-wrapper">
+                <article class="chapter-content">
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="chapter-meta">
+            
+            
+            
+            
+            
+        </div>
+        
+        <h1 class="chapter-title">Chương 2: Cài đặt môi trường</h1>
+        
+        
+        
+        <!-- Learning Objectives -->
+        
+        
+        <!-- Prerequisites -->
+        
+    </header>
+    
+    <!-- Chapter Content -->
+    <div class="chapter-body">
+        <h1 id="chương-2-cài-đặt-môi-trường">Chương 2: Cài đặt môi trường</h1>
+
+<h2 id="-mục-tiêu-học-tập">🎯 Mục tiêu học tập</h2>
+
+<p>Sau khi hoàn thành chương này, bạn sẽ có thể:</p>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cài đặt Python trên máy tính của bạn</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Thiết lập môi trường phát triển</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Chạy chương trình Python đầu tiên</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Làm quen với Python IDLE và các editor</li>
+</ul>
+
+<h2 id="-kiến-thức-cần-có">📖 Kiến thức cần có</h2>
+
+<ul>
+  <li>Hoàn thành <a href="/python_book/chapters/chapter01.html">Chương 1: Giới thiệu về Python</a></li>
+  <li>Máy tính có kết nối internet</li>
+  <li>Quyền admin để cài đặt phần mềm</li>
+</ul>
+
+<h2 id="-cài-đặt-python">🔧 Cài đặt Python</h2>
+
+<h3 id="windows">Windows</h3>
+
+<ol>
+  <li>Truy cập <a href="https://python.org">python.org</a></li>
+  <li>Click “Download Python 3.x.x”</li>
+  <li>Chạy file installer</li>
+  <li><strong>Quan trọng</strong>: Check “Add Python to PATH”</li>
+  <li>Click “Install Now”</li>
+</ol>
+
+<h3 id="macos">macOS</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Sử dụng Homebrew (recommended)</span>
+brew <span class="nb">install </span>python
+
+<span class="c"># Hoặc download từ python.org</span>
+</code></pre></div></div>
+
+<h3 id="linux">Linux</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ubuntu/Debian</span>
+<span class="nb">sudo </span>apt update
+<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip
+
+<span class="c"># CentOS/RHEL</span>
+<span class="nb">sudo </span>yum <span class="nb">install </span>python3 python3-pip
+</code></pre></div></div>
+
+<h2 id="-kiểm-tra-cài-đặt">✅ Kiểm tra cài đặt</h2>
+
+<p>Mở Terminal/Command Prompt và chạy:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">--version</span>
+<span class="c"># hoặc</span>
+python3 <span class="nt">--version</span>
+</code></pre></div></div>
+
+<p>Nếu thấy “Python 3.x.x” là thành công!</p>
+
+<h2 id="-chương-trình-đầu-tiên">🚀 Chương trình đầu tiên</h2>
+
+<p>Tạo file <code class="language-plaintext highlighter-rouge">hello.py</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Xin chào, Python!"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Tôi đã cài đặt thành công!"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Chạy:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python hello.py
+</code></pre></div></div>
+
+<h2 id="️-chương-tiếp-theo">➡️ Chương tiếp theo</h2>
+
+<p>Trong <a href="chapter03.md">Chương 3: Cú pháp cơ bản</a>, chúng ta sẽ học:</p>
+<ul>
+  <li>Variables và data types</li>
+  <li>Input/Output operations</li>
+  <li>Comments và documentation</li>
+</ul>
+
+<hr />
+
+<p><em>Chương đang được phát triển…</em></p>
+
+    </div>
+    
+    <!-- Chapter Footer -->
+    <footer class="chapter-footer">
+        <!-- Summary -->
+        
+        
+        <!-- Key Terms -->
+        
+        
+        <!-- Practice Exercises -->
+        
+        
+        <!-- Chapter Navigation -->
+        <div class="chapter-navigation">
+            <div class="nav-buttons">
+                
+                
+                <a href="/python_book/chapters/" class="nav-btn chapters-btn">
+                    <i class="fas fa-list"></i>
+                    <span>Tất cả chương</span>
+                </a>
+                
+                
+            </div>
+        </div>
+        
+        <!-- Feedback Section -->
+        <div class="chapter-feedback">
+            <h3><i class="fas fa-comment-dots"></i> Phản hồi</h3>
+            <p>Chương này có hữu ích không? Hãy cho chúng tôi biết!</p>
+            <div class="feedback-buttons">
+                <button class="feedback-btn helpful" data-feedback="helpful">
+                    <i class="fas fa-thumbs-up"></i> Hữu ích
+                </button>
+                <button class="feedback-btn not-helpful" data-feedback="not-helpful">
+                    <i class="fas fa-thumbs-down"></i> Cần cải thiện
+                </button>
+            </div>
+            <div class="feedback-links">
+                <a href="https://github.com/taipm/python_book/issues/new?title=Feedback%20for%20Ch%C6%B0%C6%A1ng+2%3A+C%C3%A0i+%C4%91%E1%BA%B7t+m%C3%B4i+tr%C6%B0%E1%BB%9Dng" class="feedback-link">
+                    <i class="fas fa-bug"></i> Báo lỗi
+                </a>
+                <a href="https://github.com/taipm/python_book/discussions" class="feedback-link">
+                    <i class="fas fa-comments"></i> Thảo luận
+                </a>
+            </div>
+        </div>
+    </footer>
+</article>
+
+<!-- Reading Progress Indicator -->
+<div class="reading-progress-indicator">
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+</div>
+
+<!-- Floating Action Buttons -->
+<div class="floating-actions">
+    <button class="fab bookmark-btn" title="Đánh dấu trang" data-chapter="/chapters/chapter02.html">
+        <i class="fas fa-bookmark"></i>
+    </button>
+    <button class="fab notes-btn" title="Ghi chú" data-chapter="/chapters/chapter02.html">
+        <i class="fas fa-sticky-note"></i>
+    </button>
+    <button class="fab share-btn" title="Chia sẻ">
+        <i class="fas fa-share-alt"></i>
+    </button>
+</div>
+
+<!-- Notes Modal -->
+<div class="modal notes-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-sticky-note"></i> Ghi chú của bạn</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <textarea class="notes-textarea" placeholder="Viết ghi chú cho chương này..."></textarea>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary notes-cancel">Hủy</button>
+            <button class="btn btn-primary notes-save">Lưu ghi chú</button>
+        </div>
+    </div>
+</div>
+
+<!-- Share Modal -->
+<div class="modal share-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-share-alt"></i> Chia sẻ chương</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="share-options">
+                <button class="share-option" data-platform="facebook">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+                <button class="share-option" data-platform="twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+                <button class="share-option" data-platform="linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </button>
+                <button class="share-option copy-link">
+                    <i class="fas fa-link"></i> Sao chép link
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Lập trình Python cơ bản</h4>
+                    <p>Sách học Python miễn phí và mã nguồn mở dành cho người Việt Nam.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/taipm/python_book" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:tai.pm@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Nội dung</h4>
+                    <ul>
+                        <li><a href="/python_book/chapters/">Tất cả chương</a></li>
+                        <li><a href="/python_book/projects/">Dự án thực hành</a></li>
+                        <li><a href="/python_book/code-examples/">Code examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="https://github.com/taipm/python_book/issues">Báo lỗi</a></li>
+                        <li><a href="https://github.com/taipm/python_book/discussions">Thảo luận</a></li>
+                        <li><a href="/python_book/contributing.html">Đóng góp</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên kết</h4>
+                    <ul>
+                        <li><a href="https://python.org">Python.org</a></li>
+                        <li><a href="https://pypi.org">PyPI</a></li>
+                        <li><a href="https://realpython.com">Real Python</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tai PM. Được phát hành dưới giấy phép <a href="https://github.com/taipm/python_book/blob/main/LICENSE">MIT License</a>.</p>
+                <p>Cập nhật lần cuối: <time datetime="2025-07-03T16:46:03+07:00">03/07/2025</time></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Về đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script src="/python_book/assets/js/main.js"></script>
+    
+    <!-- Analytics (if configured) -->
+    
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Xem trước giao diện mới của Python Book">
+    <meta name="author" content="{"name"=>"Tai PM", "email"=>"taipm@example.com", "url"=>"https://github.com/taipm"}">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Demo - Giao diện mới">
+    <meta property="og:description" content="Xem trước giao diện mới của Python Book">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taipm.github.io/python_book/test.html">
+    <meta property="og:image" content="https://taipm.github.io/python_book/assets/images/python-book-cover.png">
+    
+    <title>Demo - Giao diện mới</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/python_book/assets/css/main.css">
+    <link rel="stylesheet" href="/python_book/assets/css/syntax.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/python_book/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="/python_book/assets/images/favicon.png">
+    
+    <!-- Theme Script (Load early to prevent flash) -->
+    <script>
+        // Load theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="site-logo">
+                    <a href="/python_book/" class="logo-link">
+                        <div class="logo-icon">🐍</div>
+                        <div class="logo-text">
+                            <span class="logo-title">Python Book</span>
+                            <span class="logo-subtitle">Lập trình cơ bản</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="/python_book/" class="nav-link">Trang chủ</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Chương <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/python_book/chapters/chapter01.html">Chương 1: Giới thiệu</a></li>
+                                <li><a href="/python_book/chapters/chapter02.html">Chương 2: Cài đặt</a></li>
+                                <li><a href="/python_book/chapters/">Tất cả chương</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/python_book/projects/" class="nav-link">Dự án</a></li>
+                        <li><a href="/python_book/code-examples/" class="nav-link">Code</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Search -->
+                    <button class="search-toggle" aria-label="Tìm kiếm">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" aria-label="Chuyển đổi theme">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </button>
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/taipm/python_book" class="github-link" aria-label="GitHub Repository">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Tìm kiếm nội dung..." autocomplete="off">
+                <button class="search-close" aria-label="Đóng tìm kiếm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Main Layout -->
+    <div class="site-layout">
+        <!-- Sidebar -->
+        
+        
+        <!-- Main Content -->
+        <main id="main-content" class="main-content" role="main">
+            <div class="content-wrapper">
+                <style>
+.demo-banner {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: white;
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.demo-banner h1 {
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-3xl);
+}
+
+.demo-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.demo-feature {
+    background: var(--color-bg-secondary);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+}
+
+.demo-feature h3 {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.demo-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-xl);
+}
+
+.status-success {
+    background: var(--color-success);
+    color: white;
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+</style>
+
+<div class="demo-banner">
+    <h1>🐍 Giao diện mới đã sẵn sàng!</h1>
+    <p>Website Python Book đã được nâng cấp hoàn toàn với giao diện hiện đại và chuyên nghiệp</p>
+</div>
+
+<div class="status-success">
+    ✅ Deployment thành công! Giao diện mới đã hoạt động.
+</div>
+
+<div class="demo-features">
+    <div class="demo-feature">
+        <h3><i class="fas fa-palette"></i> Giao diện hiện đại</h3>
+        <ul>
+            <li>Dark/Light mode tự động</li>
+            <li>Typography tối ưu với Inter font</li>
+            <li>Responsive design hoàn hảo</li>
+            <li>Animations mượt mà</li>
+        </ul>
+    </div>
+    
+    <div class="demo-feature">
+        <h3><i class="fas fa-rocket"></i> Trải nghiệm nâng cao</h3>
+        <ul>
+            <li>Reading progress tracking</li>
+            <li>Table of contents tự động</li>
+            <li>Search functionality</li>
+            <li>Bookmark và notes</li>
+        </ul>
+    </div>
+    
+    <div class="demo-feature">
+        <h3><i class="fas fa-code"></i> Code experience</h3>
+        <ul>
+            <li>Syntax highlighting chuyên nghiệp</li>
+            <li>Copy code với 1 click</li>
+            <li>Interactive code blocks</li>
+            <li>Multiple language support</li>
+        </ul>
+    </div>
+    
+    <div class="demo-feature">
+        <h3><i class="fas fa-mobile-alt"></i> Mobile-first</h3>
+        <ul>
+            <li>Tối ưu cho mobile</li>
+            <li>Touch-friendly interface</li>
+            <li>Fast loading</li>
+            <li>Offline reading support</li>
+        </ul>
+    </div>
+</div>
+
+<h2>📚 Danh mục chương</h2>
+
+<div class="quick-start-cards">
+    <div class="start-card featured">
+        <div class="card-header">
+            <span class="chapter-number">01</span>
+            <div class="card-meta">
+                <span class="difficulty beginner">Cơ bản</span>
+                <span class="reading-time">15 phút</span>
+            </div>
+        </div>
+        <h3>Giới thiệu về Python</h3>
+        <p>Tìm hiểu Python là gì và tại sao nên học Python với giao diện mới</p>
+        <div class="card-footer">
+            <a href="/python_book/chapters/chapter01.html" class="btn btn-primary">
+                Đọc chương mới <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="start-card">
+        <div class="card-header">
+            <span class="chapter-number">02</span>
+            <div class="card-meta">
+                <span class="difficulty beginner">Cơ bản</span>
+                <span class="reading-time">20 phút</span>
+            </div>
+        </div>
+        <h3>Cài đặt môi trường</h3>
+        <p>Hướng dẫn cài đặt Python và các công cụ cần thiết</p>
+        <div class="card-footer">
+            <a href="/python_book/chapters/chapter02.html" class="btn btn-outline">
+                Xem chương <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="start-card">
+        <div class="card-header">
+            <span class="chapter-number">03</span>
+            <div class="card-meta">
+                <span class="difficulty beginner">Cơ bản</span>
+                <span class="reading-time">25 phút</span>
+            </div>
+        </div>
+        <h3>Cú pháp cơ bản</h3>
+        <p>Học cú pháp Python đầu tiên và làm việc với biến</p>
+        <div class="card-footer">
+            <span style="color: var(--color-text-muted);">Đang phát triển...</span>
+        </div>
+    </div>
+</div>
+
+<h2>💻 Code Examples</h2>
+<p>Tất cả code examples với syntax highlighting mới:</p>
+
+<div class="code-example">
+    <div class="code-title">hello_world.py</div>
+    <div class="highlight">
+        <pre><code class="language-python"># Chương trình Python đầu tiên
+print("Xin chào, Python Book!")
+print("🐍 Chào mừng bạn đến với thế giới Python!")
+
+# Hiển thị thông tin
+name = "Python Learner"
+print(f"Xin chào, {name}!")
+</code></pre>
+    </div>
+</div>
+
+<div class="demo-actions">
+    <a href="/python_book/" class="btn btn-primary btn-large">
+        <i class="fas fa-home"></i> Về trang chủ mới
+    </a>
+    <a href="/python_book/chapters/chapter01.html" class="btn btn-secondary btn-large">
+        <i class="fas fa-book"></i> Xem chương mẫu
+    </a>
+    <a href="https://github.com/taipm/python_book" class="btn btn-outline btn-large">
+        <i class="fab fa-github"></i> GitHub Repository
+    </a>
+</div>
+
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Lập trình Python cơ bản</h4>
+                    <p>Sách học Python miễn phí và mã nguồn mở dành cho người Việt Nam.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/taipm/python_book" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:tai.pm@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Nội dung</h4>
+                    <ul>
+                        <li><a href="/python_book/chapters/">Tất cả chương</a></li>
+                        <li><a href="/python_book/projects/">Dự án thực hành</a></li>
+                        <li><a href="/python_book/code-examples/">Code examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="https://github.com/taipm/python_book/issues">Báo lỗi</a></li>
+                        <li><a href="https://github.com/taipm/python_book/discussions">Thảo luận</a></li>
+                        <li><a href="/python_book/contributing.html">Đóng góp</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên kết</h4>
+                    <ul>
+                        <li><a href="https://python.org">Python.org</a></li>
+                        <li><a href="https://pypi.org">PyPI</a></li>
+                        <li><a href="https://realpython.com">Real Python</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tai PM. Được phát hành dưới giấy phép <a href="https://github.com/taipm/python_book/blob/main/LICENSE">MIT License</a>.</p>
+                <p>Cập nhật lần cuối: <time datetime="2025-07-03T16:46:03+07:00">03/07/2025</time></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Về đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script src="/python_book/assets/js/main.js"></script>
+    
+    <!-- Analytics (if configured) -->
+    
+</body>
+</html>

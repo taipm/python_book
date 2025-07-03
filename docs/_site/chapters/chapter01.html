@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tìm hiểu Python là gì, tại sao nên học Python và các ứng dụng thực tế">
+    <meta name="author" content="{"name"=>"Tai PM", "email"=>"taipm@example.com", "url"=>"https://github.com/taipm"}">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="Chương 1: Giới thiệu về Python">
+    <meta property="og:description" content="Tìm hiểu Python là gì, tại sao nên học Python và các ứng dụng thực tế">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taipm.github.io/python_book/chapters/chapter01.html">
+    <meta property="og:image" content="https://taipm.github.io/python_book/assets/images/python-book-cover.png">
+    
+    <title>Chương 1: Giới thiệu về Python</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/python_book/assets/css/main.css">
+    <link rel="stylesheet" href="/python_book/assets/css/syntax.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/python_book/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="/python_book/assets/images/favicon.png">
+    
+    <!-- Theme Script (Load early to prevent flash) -->
+    <script>
+        // Load theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="site-logo">
+                    <a href="/python_book/" class="logo-link">
+                        <div class="logo-icon">🐍</div>
+                        <div class="logo-text">
+                            <span class="logo-title">Python Book</span>
+                            <span class="logo-subtitle">Lập trình cơ bản</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="/python_book/" class="nav-link">Trang chủ</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Chương <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/python_book/chapters/chapter01.html">Chương 1: Giới thiệu</a></li>
+                                <li><a href="/python_book/chapters/chapter02.html">Chương 2: Cài đặt</a></li>
+                                <li><a href="/python_book/chapters/">Tất cả chương</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/python_book/projects/" class="nav-link">Dự án</a></li>
+                        <li><a href="/python_book/code-examples/" class="nav-link">Code</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Search -->
+                    <button class="search-toggle" aria-label="Tìm kiếm">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" aria-label="Chuyển đổi theme">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </button>
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/taipm/python_book" class="github-link" aria-label="GitHub Repository">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Tìm kiếm nội dung..." autocomplete="off">
+                <button class="search-close" aria-label="Đóng tìm kiếm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Main Layout -->
+    <div class="site-layout">
+        <!-- Sidebar -->
+        
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Progress -->
+                <div class="reading-progress">
+                    <div class="progress-header">
+                        <h3>Tiến độ học tập</h3>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                
+                <!-- Table of Contents -->
+                <div class="toc-container">
+                    <h3>Mục lục</h3>
+                    <div class="toc-content"></div>
+                </div>
+                
+                <!-- Chapter Navigation -->
+                <div class="chapter-nav">
+                    <h3>Điều hướng</h3>
+                    <div class="nav-buttons">
+                        
+                        
+                        
+                        <a href="/python_book/chapters/chapter02.html" class="nav-btn next-btn">
+                            <span>Chương sau</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </aside>
+        
+        
+        <!-- Main Content -->
+        <main id="main-content" class="main-content" role="main">
+            <div class="content-wrapper">
+                <article class="chapter-content">
+    <!-- Chapter Header -->
+    <header class="chapter-header">
+        <div class="chapter-meta">
+            
+            <span class="chapter-number">Chương 1</span>
+            
+            
+            
+            <span class="difficulty-badge difficulty-beginner">
+                
+                        <i class="fas fa-seedling"></i> Cơ bản
+                    
+            </span>
+            
+            
+            
+            <span class="reading-time">
+                <i class="fas fa-clock"></i> 15 phút đọc
+            </span>
+            
+        </div>
+        
+        <h1 class="chapter-title">Chương 1: Giới thiệu về Python</h1>
+        
+        
+        <p class="chapter-description">Tìm hiểu Python là gì, tại sao nên học Python và các ứng dụng thực tế</p>
+        
+        
+        <!-- Learning Objectives -->
+        
+        <div class="learning-objectives">
+            <h3><i class="fas fa-bullseye"></i> Mục tiêu học tập</h3>
+            <ul class="objectives-list">
+                
+                <li>
+                    <input type="checkbox" id="objective-1" class="objective-checkbox">
+                    <label for="objective-1">Hiểu Python là gì và tại sao nên học Python</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="objective-2" class="objective-checkbox">
+                    <label for="objective-2">Nắm được lịch sử và triết lý thiết kế của Python</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="objective-3" class="objective-checkbox">
+                    <label for="objective-3">Biết các ứng dụng thực tế của Python trong đời sống</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="objective-4" class="objective-checkbox">
+                    <label for="objective-4">So sánh Python với các ngôn ngữ lập trình khác</label>
+                </li>
+                
+            </ul>
+        </div>
+        
+        
+        <!-- Prerequisites -->
+        
+        <div class="prerequisites">
+            <h3><i class="fas fa-info-circle"></i> Kiến thức cần có</h3>
+            <ul>
+                
+                <li>Không cần kinh nghiệm lập trình trước đó</li>
+                
+                <li>Không cần kiến thức về máy tính chuyên sâu</li>
+                
+                <li>Chỉ cần sự tò mò và động lực học tập!</li>
+                
+            </ul>
+        </div>
+        
+    </header>
+    
+    <!-- Chapter Content -->
+    <div class="chapter-body">
+        <h2 id="-python-là-gì">📝 Python là gì?</h2>
+
+<p><strong>Python</strong> là một ngôn ngữ lập trình bậc cao, được thiết kế với triết lý “đơn giản và dễ đọc”. Python được tạo ra bởi Guido van Rossum vào cuối những năm 1980 và chính thức ra mắt vào năm 1991.</p>
+
+<h3 id="tại-sao-tên-là-python">Tại sao tên là “Python”?</h3>
+
+<p>Có thể bạn nghĩ tên này liên quan đến loài rắn python, nhưng thực tế Guido van Rossum đặt tên theo chương trình hài kịch “Monty Python’s Flying Circus” mà ông yêu thích.</p>
+
+<h3 id="đặc-điểm-nổi-bật-của-python">Đặc điểm nổi bật của Python</h3>
+
+<h4 id="1-cú-pháp-đơn-giản-và-dễ-đọc">1. Cú pháp đơn giản và dễ đọc</h4>
+
+<p>Python sử dụng cú pháp gần với ngôn ngữ tự nhiên:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Python code
+</span><span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Bạn đã đủ tuổi trưởng thành"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Bạn chưa đủ tuổi trưởng thành"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>So sánh với C++:</p>
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// C++ code  </span>
+<span class="k">if</span> <span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Bạn đã đủ tuổi trưởng thành"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Bạn chưa đủ tuổi trưởng thành"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h4 id="2-interpreted-language-ngôn-ngữ-thông-dịch">2. Interpreted Language (Ngôn ngữ thông dịch)</h4>
+
+<p>Python được thực thi trực tiếp mà không cần biên dịch trước như C/C++:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Viết code và chạy ngay lập tức
+</span><span class="k">print</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">)</span>  <span class="c1"># Kết quả hiển thị ngay
+</span></code></pre></div></div>
+
+<h4 id="3-dynamically-typed-kiểu-dữ-liệu-động">3. Dynamically Typed (Kiểu dữ liệu động)</h4>
+
+<p>Bạn không cần khai báo kiểu dữ liệu:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Python tự động nhận diện kiểu dữ liệu
+</span><span class="n">name</span> <span class="o">=</span> <span class="s">"Nguyễn Văn A"</span>    <span class="c1"># String
+</span><span class="n">age</span> <span class="o">=</span> <span class="mi">25</span>                  <span class="c1"># Integer  
+</span><span class="n">height</span> <span class="o">=</span> <span class="mf">1.75</span>            <span class="c1"># Float
+</span><span class="n">is_student</span> <span class="o">=</span> <span class="bp">True</span>        <span class="c1"># Boolean
+</span></code></pre></div></div>
+
+<h4 id="4-cross-platform-đa-nền-tảng">4. Cross-platform (Đa nền tảng)</h4>
+
+<p>Code Python chạy được trên:</p>
+<ul>
+  <li>Windows</li>
+  <li>macOS</li>
+  <li>Linux</li>
+  <li>Unix và nhiều hệ điều hành khác</li>
+</ul>
+
+<h2 id="️-lịch-sử-và-phiên-bản-python">🏗️ Lịch sử và phiên bản Python</h2>
+
+<h3 id="timeline-quan-trọng">Timeline quan trọng:</h3>
+
+<ul>
+  <li><strong>1989</strong>: Guido van Rossum bắt đầu phát triển Python</li>
+  <li><strong>1991</strong>: Python 0.9.0 được phát hành</li>
+  <li><strong>1994</strong>: Python 1.0 với nhiều tính năng mới</li>
+  <li><strong>2000</strong>: Python 2.0 với garbage collection</li>
+  <li><strong>2008</strong>: Python 3.0 - Phiên bản hiện đại</li>
+  <li><strong>2020</strong>: Python 2.7 chính thức ngừng hỗ trợ</li>
+</ul>
+
+<h3 id="python-2-vs-python-3">Python 2 vs Python 3</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Đặc điểm</th>
+      <th>Python 2</th>
+      <th>Python 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Print</td>
+      <td><code class="language-plaintext highlighter-rouge">print "Hello"</code></td>
+      <td><code class="language-plaintext highlighter-rouge">print("Hello")</code></td>
+    </tr>
+    <tr>
+      <td>Division</td>
+      <td><code class="language-plaintext highlighter-rouge">5/2 = 2</code></td>
+      <td><code class="language-plaintext highlighter-rouge">5/2 = 2.5</code></td>
+    </tr>
+    <tr>
+      <td>Unicode</td>
+      <td>Không mặc định</td>
+      <td>Mặc định UTF-8</td>
+    </tr>
+    <tr>
+      <td>Support</td>
+      <td>Đã dừng (2020)</td>
+      <td>Đang phát triển</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><strong>Khuyến nghị</strong>: Luôn học và sử dụng Python 3 (phiên bản 3.8+)</p>
+</blockquote>
+
+<h2 id="-tại-sao-nên-học-python">🌟 Tại sao nên học Python?</h2>
+
+<h3 id="1-dễ-học-dành-cho-người-mới-bắt-đầu">1. Dễ học dành cho người mới bắt đầu</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Chương trình đầu tiên - chỉ 1 dòng!
+</span><span class="k">print</span><span class="p">(</span><span class="s">"Xin chào, tôi đang học Python!"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="2-có-cộng-đồng-lớn-và-tài-liệu-phong-phú">2. Có cộng đồng lớn và tài liệu phong phú</h3>
+
+<ul>
+  <li>Hơn 300,000 packages trên PyPI</li>
+  <li>Cộng đồng Stack Overflow lớn</li>
+  <li>Tài liệu chính thức chi tiết</li>
+  <li>Nhiều tutorial và khóa học miễn phí</li>
+</ul>
+
+<h3 id="3-cơ-hội-việc-làm-cao">3. Cơ hội việc làm cao</h3>
+
+<p>Theo khảo sát Stack Overflow 2023:</p>
+<ul>
+  <li>Python là ngôn ngữ được yêu thích thứ 3</li>
+  <li>Mức lương lập trình viên Python cao</li>
+  <li>Nhu cầu tuyển dụng tăng 25% mỗi năm</li>
+</ul>
+
+<h3 id="4-đa-dạng-ứng-dụng">4. Đa dạng ứng dụng</h3>
+
+<p>Python có thể làm được gần như mọi thứ!</p>
+
+<h2 id="-ứng-dụng-của-python">🚀 Ứng dụng của Python</h2>
+
+<h3 id="1-web-development-phát-triển-web">1. Web Development (Phát triển web)</h3>
+
+<p><strong>Frameworks phổ biến:</strong></p>
+<ul>
+  <li><strong>Django</strong>: Web framework full-stack</li>
+  <li><strong>Flask</strong>: Micro framework linh hoạt</li>
+  <li><strong>FastAPI</strong>: Modern API framework</li>
+</ul>
+
+<p><strong>Ví dụ</strong>: Instagram, Spotify, Pinterest sử dụng Django</p>
+
+<h3 id="2-data-science--analytics">2. Data Science &amp; Analytics</h3>
+
+<p><strong>Thư viện mạnh mẽ:</strong></p>
+<ul>
+  <li><strong>Pandas</strong>: Xử lý dữ liệu</li>
+  <li><strong>NumPy</strong>: Tính toán khoa học</li>
+  <li><strong>Matplotlib/Seaborn</strong>: Visualization</li>
+  <li><strong>Scikit-learn</strong>: Machine Learning</li>
+</ul>
+
+<p><strong>Ứng dụng</strong>: Phân tích dữ liệu bán hàng, dự báo thời tiết</p>
+
+<h3 id="3-artificial-intelligence--machine-learning">3. Artificial Intelligence &amp; Machine Learning</h3>
+
+<p><strong>Frameworks hàng đầu:</strong></p>
+<ul>
+  <li><strong>TensorFlow</strong>: Google’s ML framework</li>
+  <li><strong>PyTorch</strong>: Facebook’s deep learning</li>
+  <li><strong>Keras</strong>: High-level neural networks</li>
+</ul>
+
+<p><strong>Ví dụ</strong>: ChatGPT, xe tự lái, nhận dạng hình ảnh</p>
+
+<h3 id="4-automation--scripting">4. Automation &amp; Scripting</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ví dụ: Tự động gửi email hàng ngày
+</span><span class="kn">import</span> <span class="nn">smtplib</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="k">def</span> <span class="nf">send_daily_report</span><span class="p">():</span>
+    <span class="s">"""Gửi báo cáo hàng ngày tự động."""</span>
+    <span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="p">.</span><span class="n">now</span><span class="p">().</span><span class="n">strftime</span><span class="p">(</span><span class="s">"%d/%m/%Y"</span><span class="p">)</span>
+    <span class="n">subject</span> <span class="o">=</span> <span class="sa">f</span><span class="s">"Báo cáo ngày </span><span class="si">{</span><span class="n">today</span><span class="si">}</span><span class="s">"</span>
+    <span class="c1"># Logic gửi email...
+</span>    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Đã gửi báo cáo cho ngày </span><span class="si">{</span><span class="n">today</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h3 id="5-game-development">5. Game Development</h3>
+
+<p><strong>Thư viện game:</strong></p>
+<ul>
+  <li><strong>Pygame</strong>: 2D games</li>
+  <li><strong>Panda3D</strong>: 3D games</li>
+  <li><strong>Arcade</strong>: Modern 2D game framework</li>
+</ul>
+
+<h3 id="6-desktop-applications">6. Desktop Applications</h3>
+
+<p><strong>GUI frameworks:</strong></p>
+<ul>
+  <li><strong>Tkinter</strong>: Built-in với Python</li>
+  <li><strong>PyQt/PySide</strong>: Professional GUIs</li>
+  <li><strong>Kivy</strong>: Cross-platform apps</li>
+</ul>
+
+<h2 id="️-so-sánh-python-với-ngôn-ngữ-khác">⚖️ So sánh Python với ngôn ngữ khác</h2>
+
+<h3 id="python-vs-java">Python vs Java</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Đặc điểm</th>
+      <th>Python</th>
+      <th>Java</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Cú pháp</td>
+      <td>Đơn giản, ít code</td>
+      <td>Verbose, nhiều boilerplate</td>
+    </tr>
+    <tr>
+      <td>Tốc độ</td>
+      <td>Chậm hơn</td>
+      <td>Nhanh hơn</td>
+    </tr>
+    <tr>
+      <td>Học tập</td>
+      <td>Dễ học</td>
+      <td>Khó hơn cho người mới</td>
+    </tr>
+    <tr>
+      <td>Ứng dụng</td>
+      <td>Web, AI, Data Science</td>
+      <td>Enterprise, Android</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="python-vs-javascript">Python vs JavaScript</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Đặc điểm</th>
+      <th>Python</th>
+      <th>JavaScript</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Môi trường</td>
+      <td>Server-side chính</td>
+      <td>Client-side, Node.js</td>
+    </tr>
+    <tr>
+      <td>Typing</td>
+      <td>Dynamic, strong</td>
+      <td>Dynamic, weak</td>
+    </tr>
+    <tr>
+      <td>Cú pháp</td>
+      <td>Rõ ràng</td>
+      <td>Linh hoạt nhưng dễ lỗi</td>
+    </tr>
+    <tr>
+      <td>Học tập</td>
+      <td>Dễ hơn</td>
+      <td>Dễ bắt đầu, khó master</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="python-vs-c">Python vs C++</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Đặc điểm</th>
+      <th>Python</th>
+      <th>C++</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Tốc độ</td>
+      <td>Chậm</td>
+      <td>Rất nhanh</td>
+    </tr>
+    <tr>
+      <td>Memory management</td>
+      <td>Tự động</td>
+      <td>Thủ công</td>
+    </tr>
+    <tr>
+      <td>Development time</td>
+      <td>Nhanh</td>
+      <td>Chậm</td>
+    </tr>
+    <tr>
+      <td>Use cases</td>
+      <td>Prototyping, AI</td>
+      <td>System programming, Games</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="-triết-lý-python---the-zen-of-python">💡 Triết lý Python - The Zen of Python</h2>
+
+<p>Tim Peters viết “The Zen of Python” - 19 nguyên tắc thiết kế:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">this</span>  <span class="c1"># Chạy lệnh này để xem full text
+</span></code></pre></div></div>
+
+<p><strong>Một số nguyên tắc quan trọng:</strong></p>
+
+<ol>
+  <li><strong>Beautiful is better than ugly</strong> - Đẹp tốt hơn xấu</li>
+  <li><strong>Simple is better than complex</strong> - Đơn giản tốt hơn phức tạp</li>
+  <li><strong>Readability counts</strong> - Khả năng đọc hiểu rất quan trọng</li>
+  <li><strong>There should be one obvious way to do it</strong> - Nên có một cách rõ ràng để làm việc</li>
+</ol>
+
+<h2 id="-tìm-hiểu-thêm">🔍 Tìm hiểu thêm</h2>
+
+<h3 id="tài-liệu-chính-thức">Tài liệu chính thức</h3>
+<ul>
+  <li><a href="https://python.org">Python.org</a> - Trang chủ Python</li>
+  <li><a href="https://docs.python.org/3/">Python Documentation</a> - Docs chính thức</li>
+  <li><a href="https://peps.python.org/">PEP Index</a> - Python Enhancement Proposals</li>
+</ul>
+
+<h3 id="cộng-đồng-python-việt-nam">Cộng đồng Python Việt Nam</h3>
+<ul>
+  <li><a href="https://facebook.com/groups/pythonvietnam">Facebook: Python Vietnam</a></li>
+  <li><a href="https://discord.gg/pythonvn">Discord: Python VN</a></li>
+  <li><a href="https://pycon.vn">PyConVN</a> - Hội nghị Python VN</li>
+</ul>
+
+<h3 id="khóa-học-và-tutorial">Khóa học và tutorial</h3>
+<ul>
+  <li><a href="https://realpython.com">Real Python</a> - Tutorial chất lượng cao</li>
+  <li><a href="https://docs.python.org/3/tutorial/">Python.org Tutorial</a> - Tutorial chính thức</li>
+  <li><a href="https://codecademy.com/learn/learn-python-3">Codecademy Python</a> - Interactive learning</li>
+</ul>
+
+<h2 id="-tóm-tắt-chương">📋 Tóm tắt chương</h2>
+
+<h3 id="những-điều-đã-học">Những điều đã học</h3>
+
+<ol>
+  <li><strong>Python là gì</strong>: Ngôn ngữ lập trình đơn giản, dễ đọc, đa nền tảng</li>
+  <li><strong>Lịch sử</strong>: Tạo bởi Guido van Rossum (1991), Python 3 là phiên bản hiện tại</li>
+  <li><strong>Ưu điểm</strong>: Dễ học, cộng đồng lớn, ứng dụng đa dạng, cơ hội việc làm cao</li>
+  <li><strong>Ứng dụng</strong>: Web, AI/ML, Data Science, Automation, Games, Desktop apps</li>
+  <li><strong>So sánh</strong>: Đơn giản hơn Java/C++, chậm hơn nhưng development nhanh</li>
+</ol>
+
+<h3 id="từ-khóa-quan-trọng">Từ khóa quan trọng</h3>
+
+<ul>
+  <li><strong>Python</strong>: Ngôn ngữ lập trình bậc cao</li>
+  <li><strong>Interpreted</strong>: Thông dịch, chạy trực tiếp</li>
+  <li><strong>Dynamic typing</strong>: Kiểu dữ liệu động</li>
+  <li><strong>Cross-platform</strong>: Đa nền tảng</li>
+  <li><strong>Zen of Python</strong>: Triết lý thiết kế Python</li>
+</ul>
+
+<h3 id="checklist-hoàn-thành">Checklist hoàn thành</h3>
+
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Hiểu Python là gì và lịch sử phát triển</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Nắm được ưu điểm của Python</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Biết các ứng dụng chính của Python</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />So sánh được Python với ngôn ngữ khác</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Hiểu triết lý thiết kế Python</li>
+</ul>
+
+<h2 id="️-chương-tiếp-theo">➡️ Chương tiếp theo</h2>
+
+<p>Trong <a href="/python_book/chapters/chapter02.html">Chương 2: Cài đặt môi trường</a>, chúng ta sẽ:</p>
+
+<ul>
+  <li>Cài đặt Python trên máy tính</li>
+  <li>Thiết lập môi trường phát triển</li>
+  <li>Chạy chương trình Python đầu tiên</li>
+  <li>Làm quen với Python IDLE và VS Code</li>
+</ul>
+
+<p>Chuẩn bị cho chương sau:</p>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Chuẩn bị máy tính (Windows/macOS/Linux)</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Kết nối internet để download Python</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Sẵn sàng cho adventure đầu tiên! 🚀</li>
+</ul>
+
+<hr />
+
+<h2 id="-hỗ-trợ">📞 Hỗ trợ</h2>
+
+<p>Có câu hỏi về chương này?</p>
+
+<ul>
+  <li>🐛 <a href="https://github.com/taipm/python_book/issues">Báo lỗi nội dung</a></li>
+  <li>💬 <a href="https://github.com/taipm/python_book/discussions">Thảo luận</a></li>
+  <li>📧 Email: tai.pm@example.com</li>
+</ul>
+
+<hr />
+
+<p><em>Chương được cập nhật lần cuối: 03/07/2025</em></p>
+
+    </div>
+    
+    <!-- Chapter Footer -->
+    <footer class="chapter-footer">
+        <!-- Summary -->
+        
+        
+        <!-- Key Terms -->
+        
+        <div class="key-terms">
+            <h3><i class="fas fa-key"></i> Từ khóa quan trọng</h3>
+            <div class="terms-grid">
+                
+                <div class="term-item">
+                    <strong>Python</strong>
+                    <span>Ngôn ngữ lập trình bậc cao</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>Interpreted</strong>
+                    <span>Thông dịch, chạy trực tiếp</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>Dynamic typing</strong>
+                    <span>Kiểu dữ liệu động</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>Cross-platform</strong>
+                    <span>Đa nền tảng</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>Zen of Python</strong>
+                    <span>Triết lý thiết kế Python</span>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <!-- Practice Exercises -->
+        
+        
+        <!-- Chapter Navigation -->
+        <div class="chapter-navigation">
+            <div class="nav-buttons">
+                
+                
+                <a href="/python_book/chapters/" class="nav-btn chapters-btn">
+                    <i class="fas fa-list"></i>
+                    <span>Tất cả chương</span>
+                </a>
+                
+                
+                <a href="/python_book/chapters/chapter02.html" class="nav-btn next-btn">
+                    <div class="nav-content">
+                        <span class="nav-label">Chương sau</span>
+                        <span class="nav-title">Chương 2: Cài đặt môi trường</span>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+                
+            </div>
+        </div>
+        
+        <!-- Feedback Section -->
+        <div class="chapter-feedback">
+            <h3><i class="fas fa-comment-dots"></i> Phản hồi</h3>
+            <p>Chương này có hữu ích không? Hãy cho chúng tôi biết!</p>
+            <div class="feedback-buttons">
+                <button class="feedback-btn helpful" data-feedback="helpful">
+                    <i class="fas fa-thumbs-up"></i> Hữu ích
+                </button>
+                <button class="feedback-btn not-helpful" data-feedback="not-helpful">
+                    <i class="fas fa-thumbs-down"></i> Cần cải thiện
+                </button>
+            </div>
+            <div class="feedback-links">
+                <a href="https://github.com/taipm/python_book/issues/new?title=Feedback%20for%20Ch%C6%B0%C6%A1ng+1%3A+Gi%E1%BB%9Bi+thi%E1%BB%87u+v%E1%BB%81+Python" class="feedback-link">
+                    <i class="fas fa-bug"></i> Báo lỗi
+                </a>
+                <a href="https://github.com/taipm/python_book/discussions" class="feedback-link">
+                    <i class="fas fa-comments"></i> Thảo luận
+                </a>
+            </div>
+        </div>
+    </footer>
+</article>
+
+<!-- Reading Progress Indicator -->
+<div class="reading-progress-indicator">
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
+</div>
+
+<!-- Floating Action Buttons -->
+<div class="floating-actions">
+    <button class="fab bookmark-btn" title="Đánh dấu trang" data-chapter="/chapters/chapter01.html">
+        <i class="fas fa-bookmark"></i>
+    </button>
+    <button class="fab notes-btn" title="Ghi chú" data-chapter="/chapters/chapter01.html">
+        <i class="fas fa-sticky-note"></i>
+    </button>
+    <button class="fab share-btn" title="Chia sẻ">
+        <i class="fas fa-share-alt"></i>
+    </button>
+</div>
+
+<!-- Notes Modal -->
+<div class="modal notes-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-sticky-note"></i> Ghi chú của bạn</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <textarea class="notes-textarea" placeholder="Viết ghi chú cho chương này..."></textarea>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-secondary notes-cancel">Hủy</button>
+            <button class="btn btn-primary notes-save">Lưu ghi chú</button>
+        </div>
+    </div>
+</div>
+
+<!-- Share Modal -->
+<div class="modal share-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3><i class="fas fa-share-alt"></i> Chia sẻ chương</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="share-options">
+                <button class="share-option" data-platform="facebook">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+                <button class="share-option" data-platform="twitter">
+                    <i class="fab fa-twitter"></i> Twitter
+                </button>
+                <button class="share-option" data-platform="linkedin">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </button>
+                <button class="share-option copy-link">
+                    <i class="fas fa-link"></i> Sao chép link
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Lập trình Python cơ bản</h4>
+                    <p>Sách học Python miễn phí và mã nguồn mở dành cho người Việt Nam.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/taipm/python_book" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:tai.pm@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Nội dung</h4>
+                    <ul>
+                        <li><a href="/python_book/chapters/">Tất cả chương</a></li>
+                        <li><a href="/python_book/projects/">Dự án thực hành</a></li>
+                        <li><a href="/python_book/code-examples/">Code examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="https://github.com/taipm/python_book/issues">Báo lỗi</a></li>
+                        <li><a href="https://github.com/taipm/python_book/discussions">Thảo luận</a></li>
+                        <li><a href="/python_book/contributing.html">Đóng góp</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên kết</h4>
+                    <ul>
+                        <li><a href="https://python.org">Python.org</a></li>
+                        <li><a href="https://pypi.org">PyPI</a></li>
+                        <li><a href="https://realpython.com">Real Python</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tai PM. Được phát hành dưới giấy phép <a href="https://github.com/taipm/python_book/blob/main/LICENSE">MIT License</a>.</p>
+                <p>Cập nhật lần cuối: <time datetime="2025-07-03T16:46:03+07:00">03/07/2025</time></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Về đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script src="/python_book/assets/js/main.js"></script>
+    
+    <!-- Analytics (if configured) -->
+    
+</body>
+</html>

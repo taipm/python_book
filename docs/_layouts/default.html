@@ -154,7 +154,7 @@
                         {% endif %}
                         
                         {% if page.next_chapter %}
-                        <a href="{{ page.next_chapter | relative_url }}" class="nav-btn next-btn">
+                        <a href="{{ page.next_chapter.url | relative_url }}" class="nav-btn next-btn">
                             <span>Chương sau</span>
                             <i class="fas fa-chevron-right"></i>
                         </a>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source">
+    <meta name="author" content="{"name"=>"Tai PM", "email"=>"taipm@example.com", "url"=>"https://github.com/taipm"}">
+    
+    <!-- SEO Meta Tags -->
+    <meta property="og:title" content="🎨 Design System - Python Book">
+    <meta property="og:description" content="Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taipm.github.io/python_book/DESIGN_SYSTEM.html">
+    <meta property="og:image" content="https://taipm.github.io/python_book/assets/images/python-book-cover.png">
+    
+    <title>🎨 Design System - Python Book</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/python_book/assets/css/main.css">
+    <link rel="stylesheet" href="/python_book/assets/css/syntax.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/python_book/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="/python_book/assets/images/favicon.png">
+    
+    <!-- Theme Script (Load early to prevent flash) -->
+    <script>
+        // Load theme preference
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
+    
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <div class="site-logo">
+                    <a href="/python_book/" class="logo-link">
+                        <div class="logo-icon">🐍</div>
+                        <div class="logo-text">
+                            <span class="logo-title">Python Book</span>
+                            <span class="logo-subtitle">Lập trình cơ bản</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="main-nav" role="navigation" aria-label="Main navigation">
+                    <ul class="nav-list">
+                        <li><a href="/python_book/" class="nav-link">Trang chủ</a></li>
+                        <li class="nav-dropdown">
+                            <a href="#" class="nav-link dropdown-toggle">
+                                Chương <i class="fas fa-chevron-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/python_book/chapters/chapter01.html">Chương 1: Giới thiệu</a></li>
+                                <li><a href="/python_book/chapters/chapter02.html">Chương 2: Cài đặt</a></li>
+                                <li><a href="/python_book/chapters/">Tất cả chương</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/python_book/projects/" class="nav-link">Dự án</a></li>
+                        <li><a href="/python_book/code-examples/" class="nav-link">Code</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Header Actions -->
+                <div class="header-actions">
+                    <!-- Search -->
+                    <button class="search-toggle" aria-label="Tìm kiếm">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" aria-label="Chuyển đổi theme">
+                        <i class="fas fa-sun light-icon"></i>
+                        <i class="fas fa-moon dark-icon"></i>
+                    </button>
+                    
+                    <!-- GitHub -->
+                    <a href="https://github.com/taipm/python_book" class="github-link" aria-label="GitHub Repository">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Search Overlay -->
+    <div class="search-overlay">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Tìm kiếm nội dung..." autocomplete="off">
+                <button class="search-close" aria-label="Đóng tìm kiếm">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="search-results"></div>
+        </div>
+    </div>
+    
+    <!-- Main Layout -->
+    <div class="site-layout">
+        <!-- Sidebar -->
+        
+        
+        <!-- Main Content -->
+        <main id="main-content" class="main-content" role="main">
+            <div class="content-wrapper">
+                <h1 id="-design-system---python-book">🎨 Design System - Python Book</h1>
+
+<h2 id="tổng-quan">Tổng quan</h2>
+
+<p>Website Python Book đã được nâng cấp hoàn toàn với một design system hiện đại, chuyên nghiệp và tối ưu trải nghiệm người dùng.</p>
+
+<h2 id="-tính-năng-chính">🌟 Tính năng chính</h2>
+
+<h3 id="1-giao-diện-hiện-đại">1. Giao diện hiện đại</h3>
+<ul>
+  <li><strong>Dark/Light Mode</strong>: Tự động chuyển đổi theo preference của user</li>
+  <li><strong>Typography</strong>: Sử dụng Inter font cho text và JetBrains Mono cho code</li>
+  <li><strong>Color System</strong>: Palette màu nhất quán với Python branding</li>
+  <li><strong>Responsive Design</strong>: Tối ưu cho mọi thiết bị</li>
+</ul>
+
+<h3 id="2-trải-nghiệm-đọc-nâng-cao">2. Trải nghiệm đọc nâng cao</h3>
+<ul>
+  <li><strong>Reading Progress</strong>: Thanh tiến độ đọc realtime</li>
+  <li><strong>Table of Contents</strong>: Tự động generate và scroll spy</li>
+  <li><strong>Bookmark System</strong>: Lưu trang yêu thích</li>
+  <li><strong>Notes Feature</strong>: Ghi chú cá nhân cho từng chương</li>
+</ul>
+
+<h3 id="3-code-experience">3. Code Experience</h3>
+<ul>
+  <li><strong>Syntax Highlighting</strong>: GitHub-style với theme sáng/tối</li>
+  <li><strong>Copy Code</strong>: 1-click copy với feedback</li>
+  <li><strong>Interactive Blocks</strong>: Chạy code trực tiếp (planned)</li>
+  <li><strong>Language Labels</strong>: Hiển thị ngôn ngữ programming</li>
+</ul>
+
+<h3 id="4-navigation--search">4. Navigation &amp; Search</h3>
+<ul>
+  <li><strong>Smart Search</strong>: Tìm kiếm nội dung với keyboard shortcut (Ctrl+K)</li>
+  <li><strong>Chapter Navigation</strong>: Previous/Next với preview</li>
+  <li><strong>Breadcrumbs</strong>: Định hướng vị trí hiện tại</li>
+  <li><strong>Mobile Menu</strong>: Hamburger menu responsive</li>
+</ul>
+
+<h2 id="-design-tokens">🎨 Design Tokens</h2>
+
+<h3 id="colors">Colors</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Primary Colors */</span>
+<span class="nt">--color-primary</span><span class="o">:</span> <span class="err">#3776</span><span class="nt">ab</span><span class="o">;</span>        <span class="c">/* Python Blue */</span>
+<span class="nt">--color-secondary</span><span class="o">:</span> <span class="nf">#ffd43b</span><span class="o">;</span>      <span class="c">/* Python Yellow */</span>
+
+<span class="c">/* Semantic Colors */</span>
+<span class="nt">--color-success</span><span class="o">:</span> <span class="err">#28</span><span class="nt">a745</span><span class="o">;</span>
+<span class="nt">--color-warning</span><span class="o">:</span> <span class="nf">#ffc107</span><span class="o">;</span>
+<span class="nt">--color-error</span><span class="o">:</span> <span class="nf">#dc3545</span><span class="o">;</span>
+<span class="nt">--color-info</span><span class="o">:</span> <span class="err">#17</span><span class="nt">a2b8</span><span class="o">;</span>
+
+<span class="c">/* Text Colors */</span>
+<span class="nt">--color-text</span><span class="o">:</span> <span class="err">#2</span><span class="nt">c3e50</span><span class="o">;</span>           <span class="c">/* Dark theme: #e2e8f0 */</span>
+<span class="nt">--color-text-light</span><span class="o">:</span> <span class="err">#6</span><span class="nt">c757d</span><span class="o">;</span>     <span class="c">/* Dark theme: #a0aec0 */</span>
+<span class="nt">--color-text-muted</span><span class="o">:</span> <span class="err">#95</span><span class="nt">a5a6</span><span class="o">;</span>     <span class="c">/* Dark theme: #718096 */</span>
+
+<span class="c">/* Background Colors */</span>
+<span class="nt">--color-bg</span><span class="o">:</span> <span class="nf">#ffffff</span><span class="o">;</span>             <span class="c">/* Dark theme: #1a202c */</span>
+<span class="nt">--color-bg-secondary</span><span class="o">:</span> <span class="nf">#f8f9fa</span><span class="o">;</span>   <span class="c">/* Dark theme: #2d3748 */</span>
+<span class="nt">--color-bg-tertiary</span><span class="o">:</span> <span class="nf">#e9ecef</span><span class="o">;</span>    <span class="c">/* Dark theme: #4a5568 */</span>
+</code></pre></div></div>
+
+<h3 id="typography">Typography</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Font Families */</span>
+<span class="nt">--font-family-base</span><span class="o">:</span> <span class="s2">'Inter'</span><span class="o">,</span> <span class="nt">sans-serif</span><span class="o">;</span>
+<span class="nt">--font-family-mono</span><span class="o">:</span> <span class="s2">'JetBrains Mono'</span><span class="o">,</span> <span class="nt">monospace</span><span class="o">;</span>
+
+<span class="c">/* Font Sizes */</span>
+<span class="nt">--font-size-xs</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">75</span><span class="nt">rem</span><span class="o">;</span>    <span class="c">/* 12px */</span>
+<span class="nt">--font-size-sm</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">875</span><span class="nt">rem</span><span class="o">;</span>   <span class="c">/* 14px */</span>
+<span class="nt">--font-size-base</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span>     <span class="c">/* 16px */</span>
+<span class="nt">--font-size-lg</span><span class="o">:</span> <span class="err">1</span><span class="o">.</span><span class="err">125</span><span class="nt">rem</span><span class="o">;</span>   <span class="c">/* 18px */</span>
+<span class="nt">--font-size-xl</span><span class="o">:</span> <span class="err">1</span><span class="o">.</span><span class="err">25</span><span class="nt">rem</span><span class="o">;</span>    <span class="c">/* 20px */</span>
+<span class="nt">--font-size-2xl</span><span class="o">:</span> <span class="err">1</span><span class="o">.</span><span class="err">5</span><span class="nt">rem</span><span class="o">;</span>    <span class="c">/* 24px */</span>
+<span class="nt">--font-size-3xl</span><span class="o">:</span> <span class="err">1</span><span class="o">.</span><span class="err">875</span><span class="nt">rem</span><span class="o">;</span>  <span class="c">/* 30px */</span>
+<span class="nt">--font-size-4xl</span><span class="o">:</span> <span class="err">2</span><span class="o">.</span><span class="err">25</span><span class="nt">rem</span><span class="o">;</span>   <span class="c">/* 36px */</span>
+
+<span class="c">/* Font Weights */</span>
+<span class="nt">--font-weight-light</span><span class="o">:</span> <span class="err">300</span><span class="o">;</span>
+<span class="nt">--font-weight-normal</span><span class="o">:</span> <span class="err">400</span><span class="o">;</span>
+<span class="nt">--font-weight-medium</span><span class="o">:</span> <span class="err">500</span><span class="o">;</span>
+<span class="nt">--font-weight-semibold</span><span class="o">:</span> <span class="err">600</span><span class="o">;</span>
+<span class="nt">--font-weight-bold</span><span class="o">:</span> <span class="err">700</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="spacing">Spacing</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--spacing-xs</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">25</span><span class="nt">rem</span><span class="o">;</span>   <span class="c">/* 4px */</span>
+<span class="nt">--spacing-sm</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">5</span><span class="nt">rem</span><span class="o">;</span>    <span class="c">/* 8px */</span>
+<span class="nt">--spacing-md</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span>      <span class="c">/* 16px */</span>
+<span class="nt">--spacing-lg</span><span class="o">:</span> <span class="err">1</span><span class="o">.</span><span class="err">5</span><span class="nt">rem</span><span class="o">;</span>    <span class="c">/* 24px */</span>
+<span class="nt">--spacing-xl</span><span class="o">:</span> <span class="err">2</span><span class="nt">rem</span><span class="o">;</span>      <span class="c">/* 32px */</span>
+<span class="nt">--spacing-2xl</span><span class="o">:</span> <span class="err">3</span><span class="nt">rem</span><span class="o">;</span>     <span class="c">/* 48px */</span>
+<span class="nt">--spacing-3xl</span><span class="o">:</span> <span class="err">4</span><span class="nt">rem</span><span class="o">;</span>     <span class="c">/* 64px */</span>
+</code></pre></div></div>
+
+<h3 id="border-radius">Border Radius</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">--radius-sm</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">25</span><span class="nt">rem</span><span class="o">;</span>    <span class="c">/* 4px */</span>
+<span class="nt">--radius-md</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">5</span><span class="nt">rem</span><span class="o">;</span>     <span class="c">/* 8px */</span>
+<span class="nt">--radius-lg</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">75</span><span class="nt">rem</span><span class="o">;</span>    <span class="c">/* 12px */</span>
+<span class="nt">--radius-xl</span><span class="o">:</span> <span class="err">1</span><span class="nt">rem</span><span class="o">;</span>       <span class="c">/* 16px */</span>
+<span class="nt">--radius-full</span><span class="o">:</span> <span class="err">9999</span><span class="nt">px</span><span class="o">;</span>   <span class="c">/* Full rounded */</span>
+</code></pre></div></div>
+
+<h2 id="-responsive-breakpoints">📱 Responsive Breakpoints</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Mobile First Approach */</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">480px</span><span class="p">)</span>  <span class="p">{</span> <span class="c">/* Mobile */</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">768px</span><span class="p">)</span>  <span class="p">{</span> <span class="c">/* Tablet */</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">1024px</span><span class="p">)</span> <span class="p">{</span> <span class="c">/* Desktop */</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">1200px</span><span class="p">)</span> <span class="p">{</span> <span class="c">/* Large Desktop */</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="-components">🧩 Components</h2>
+
+<h3 id="1-buttons">1. Buttons</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Primary Button --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;i</span> <span class="na">class=</span><span class="s">"fas fa-play"</span><span class="nt">&gt;&lt;/i&gt;</span> Bắt đầu học
+<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Secondary Button --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-secondary"</span><span class="nt">&gt;</span>Tìm hiểu thêm<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Outline Button --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-outline"</span><span class="nt">&gt;</span>Xem chi tiết<span class="nt">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Large Button --&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary btn-large"</span><span class="nt">&gt;</span>Call to Action<span class="nt">&lt;/a&gt;</span>
+</code></pre></div></div>
+
+<h3 id="2-cards">2. Cards</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Feature Card --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feature-card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"feature-icon"</span><span class="nt">&gt;</span>🚀<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>Tiêu đề<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Mô tả tính năng...<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Chapter Card --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"start-card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-header"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"chapter-number"</span><span class="nt">&gt;</span>01<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-meta"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"difficulty beginner"</span><span class="nt">&gt;</span>Cơ bản<span class="nt">&lt;/span&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"reading-time"</span><span class="nt">&gt;</span>15 phút<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>Tiêu đề chương<span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Mô tả nội dung...<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"card-footer"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span><span class="nt">&gt;</span>Đọc chương<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="3-code-blocks">3. Code Blocks</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Basic Code Block --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;pre&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-python"</span><span class="nt">&gt;</span>
+print("Hello, World!")
+    <span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Code with Title --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"code-example"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"code-title"</span><span class="nt">&gt;</span>hello.py<span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;pre&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-python"</span><span class="nt">&gt;</span>
+print("Hello, World!")
+        <span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="c">&lt;!-- Interactive Code --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"interactive-code"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"code-header"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"code-title"</span><span class="nt">&gt;</span>Thử ngay<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"run-btn"</span><span class="nt">&gt;</span>Chạy code<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"highlight"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;pre&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-python"</span><span class="nt">&gt;</span>
+# Code có thể chạy
+print("Interactive Python!")
+        <span class="nt">&lt;/code&gt;&lt;/pre&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="4-badges--status">4. Badges &amp; Status</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Difficulty Badges --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"difficulty beginner"</span><span class="nt">&gt;</span>Cơ bản<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"difficulty intermediate"</span><span class="nt">&gt;</span>Trung bình<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"difficulty advanced"</span><span class="nt">&gt;</span>Nâng cao<span class="nt">&lt;/span&gt;</span>
+
+<span class="c">&lt;!-- Status Badges --&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"chapter-status status-available"</span><span class="nt">&gt;</span>Sẵn sàng<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"chapter-status status-coming-soon"</span><span class="nt">&gt;</span>Sắp có<span class="nt">&lt;/span&gt;</span>
+</code></pre></div></div>
+
+<h2 id="-layout-system">🎯 Layout System</h2>
+
+<h3 id="1-home-layout">1. Home Layout</h3>
+<ul>
+  <li>Hero section với gradient background</li>
+  <li>Features grid với hover effects</li>
+  <li>Quick start cards với featured highlighting</li>
+  <li>Curriculum overview với status indicators</li>
+  <li>Learning paths với recommendations</li>
+  <li>Call-to-action section</li>
+</ul>
+
+<h3 id="2-chapter-layout">2. Chapter Layout</h3>
+<ul>
+  <li>Chapter header với metadata</li>
+  <li>Learning objectives checklist</li>
+  <li>Prerequisites information</li>
+  <li>Sidebar với TOC và progress</li>
+  <li>Reading progress indicator</li>
+  <li>Floating action buttons</li>
+  <li>Chapter navigation</li>
+  <li>Feedback system</li>
+</ul>
+
+<h3 id="3-default-layout">3. Default Layout</h3>
+<ul>
+  <li>Sticky header với navigation</li>
+  <li>Search overlay</li>
+  <li>Theme toggle</li>
+  <li>Mobile-responsive menu</li>
+  <li>Footer với links</li>
+  <li>Back-to-top button</li>
+</ul>
+
+<h2 id="-performance-features">🚀 Performance Features</h2>
+
+<h3 id="1-loading-optimization">1. Loading Optimization</h3>
+<ul>
+  <li>CSS variables cho theme switching</li>
+  <li>Font preloading</li>
+  <li>Lazy loading cho images</li>
+  <li>Minified assets</li>
+</ul>
+
+<h3 id="2-user-experience">2. User Experience</h3>
+<ul>
+  <li>Smooth scrolling</li>
+  <li>Transition animations</li>
+  <li>Loading states</li>
+  <li>Error handling</li>
+  <li>Accessibility support</li>
+</ul>
+
+<h3 id="3-progressive-enhancement">3. Progressive Enhancement</h3>
+<ul>
+  <li>Works without JavaScript</li>
+  <li>Graceful degradation</li>
+  <li>Print-friendly styles</li>
+  <li>SEO optimized</li>
+</ul>
+
+<h2 id="-usage-guidelines">📚 Usage Guidelines</h2>
+
+<h3 id="1-theme-implementation">1. Theme Implementation</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Theme switching</span>
+<span class="kd">const</span> <span class="nx">theme</span> <span class="o">=</span> <span class="nx">localStorage</span><span class="p">.</span><span class="nx">getItem</span><span class="p">(</span><span class="dl">'</span><span class="s1">theme</span><span class="dl">'</span><span class="p">)</span> <span class="o">||</span> <span class="dl">'</span><span class="s1">light</span><span class="dl">'</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">documentElement</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="dl">'</span><span class="s1">data-theme</span><span class="dl">'</span><span class="p">,</span> <span class="nx">theme</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="2-component-usage">2. Component Usage</h3>
+<ul>
+  <li>Sử dụng CSS classes có sẵn</li>
+  <li>Tuân thủ naming convention</li>
+  <li>Responsive-first approach</li>
+  <li>Accessibility considerations</li>
+</ul>
+
+<h3 id="3-content-guidelines">3. Content Guidelines</h3>
+<ul>
+  <li>Sử dụng emoji phù hợp</li>
+  <li>Consistent tone of voice</li>
+  <li>Clear hierarchy</li>
+  <li>Actionable content</li>
+</ul>
+
+<h2 id="-development">🔧 Development</h2>
+
+<h3 id="file-structure">File Structure</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docs/
+├── _layouts/
+│   ├── default.html      # Base layout
+│   ├── home.html         # Homepage layout
+│   └── chapter.html      # Chapter layout
+├── assets/
+│   ├── css/
+│   │   ├── main.css      # Main styles
+│   │   └── syntax.css    # Code highlighting
+│   ├── js/
+│   │   └── main.js       # JavaScript functionality
+│   └── images/
+│       └── favicon.svg   # Site icon
+└── _config.yml           # Jekyll configuration
+</code></pre></div></div>
+
+<h3 id="build-process">Build Process</h3>
+<ol>
+  <li>Jekyll processes Markdown files</li>
+  <li>Liquid templates render layouts</li>
+  <li>CSS/JS assets are served</li>
+  <li>GitHub Pages deployment</li>
+</ol>
+
+<h2 id="-customization">🎨 Customization</h2>
+
+<h3 id="adding-new-colors">Adding New Colors</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">:root</span> <span class="p">{</span>
+    <span class="py">--color-custom</span><span class="p">:</span> <span class="err">#</span><span class="n">your-color</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="o">[</span><span class="nt">data-theme</span><span class="o">=</span><span class="s1">"dark"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="py">--color-custom</span><span class="p">:</span> <span class="err">#</span><span class="n">your-dark-color</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="creating-new-components">Creating New Components</h3>
+<ol>
+  <li>Follow BEM methodology</li>
+  <li>Use CSS variables</li>
+  <li>Ensure responsive design</li>
+  <li>Add dark theme support</li>
+  <li>Test accessibility</li>
+</ol>
+
+<h3 id="extending-layouts">Extending Layouts</h3>
+<ol>
+  <li>Create new layout in <code class="language-plaintext highlighter-rouge">_layouts/</code></li>
+  <li>Extend from <code class="language-plaintext highlighter-rouge">default.html</code></li>
+  <li>Add specific styles</li>
+  <li>Update navigation if needed</li>
+</ol>
+
+<h2 id="-best-practices">📖 Best Practices</h2>
+
+<h3 id="1-css">1. CSS</h3>
+<ul>
+  <li>Mobile-first responsive design</li>
+  <li>Use CSS custom properties</li>
+  <li>Consistent naming convention</li>
+  <li>Modular architecture</li>
+</ul>
+
+<h3 id="2-javascript">2. JavaScript</h3>
+<ul>
+  <li>Progressive enhancement</li>
+  <li>Event delegation</li>
+  <li>Performance optimization</li>
+  <li>Error handling</li>
+</ul>
+
+<h3 id="3-content">3. Content</h3>
+<ul>
+  <li>Semantic HTML structure</li>
+  <li>Proper heading hierarchy</li>
+  <li>Alt text for images</li>
+  <li>Keyboard navigation support</li>
+</ul>
+
+<h2 id="-future-enhancements">🚀 Future Enhancements</h2>
+
+<h3 id="planned-features">Planned Features</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Advanced search with filters</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Code playground integration</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Progress tracking across sessions</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Social sharing improvements</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Offline reading support</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Multi-language support</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Interactive exercises</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Video integration</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Community features</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Analytics dashboard</li>
+</ul>
+
+<h3 id="technical-improvements">Technical Improvements</h3>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Service Worker for caching</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />WebP image optimization</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Critical CSS inlining</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Bundle optimization</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Performance monitoring</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />A11y testing automation</li>
+</ul>
+
+<hr />
+
+<p><strong>Design System Version</strong>: 1.0.0<br />
+<strong>Last Updated</strong>: January 2025<br />
+<strong>Maintainer</strong>: Tai PM</p>
+
+            </div>
+        </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Lập trình Python cơ bản</h4>
+                    <p>Sách học Python miễn phí và mã nguồn mở dành cho người Việt Nam.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/taipm/python_book" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:tai.pm@example.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Nội dung</h4>
+                    <ul>
+                        <li><a href="/python_book/chapters/">Tất cả chương</a></li>
+                        <li><a href="/python_book/projects/">Dự án thực hành</a></li>
+                        <li><a href="/python_book/code-examples/">Code examples</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Hỗ trợ</h4>
+                    <ul>
+                        <li><a href="https://github.com/taipm/python_book/issues">Báo lỗi</a></li>
+                        <li><a href="https://github.com/taipm/python_book/discussions">Thảo luận</a></li>
+                        <li><a href="/python_book/contributing.html">Đóng góp</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liên kết</h4>
+                    <ul>
+                        <li><a href="https://python.org">Python.org</a></li>
+                        <li><a href="https://pypi.org">PyPI</a></li>
+                        <li><a href="https://realpython.com">Real Python</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Tai PM. Được phát hành dưới giấy phép <a href="https://github.com/taipm/python_book/blob/main/LICENSE">MIT License</a>.</p>
+                <p>Cập nhật lần cuối: <time datetime="2025-07-03T16:46:03+07:00">03/07/2025</time></p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top -->
+    <button class="back-to-top" aria-label="Về đầu trang">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <!-- Scripts -->
+    <script src="/python_book/assets/js/main.js"></script>
+    
+    <!-- Analytics (if configured) -->
+    
+</body>
+</html>
