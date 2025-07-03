@@ -47,5 +47,29 @@ D. `help(zen)`
 
 **Câu 8:** Truy cập vào trang [Python.org](https://python.org) và tìm hiểu xem phiên bản Python 3 mới nhất hiện tại là phiên bản nào.
 
+### Bài tập Lập trình (từ "Python by Example")
+
+**Bài 1:** Yêu cầu người dùng nhập tên và hiển thị thông báo `Xin chào [Tên]`.
+
+**Bài 2:** Yêu cầu người dùng nhập tên, sau đó nhập họ, và hiển thị thông báo `Xin chào [Tên] [Họ]`.
+
+**Bài 3:** Viết code để hiển thị câu nói đùa "Bạn gọi một con gấu không có răng là gì?" và ở dòng tiếp theo hiển thị câu trả lời "Một con gấu gummy!". Hãy thử tạo ra nó chỉ bằng một dòng code.
+
+**Bài 4:** Yêu cầu người dùng nhập hai số. Cộng chúng lại và hiển thị câu trả lời dưới dạng `Tổng là [kết quả]`.
+
+**Bài 5:** Yêu cầu người dùng nhập ba số. Cộng hai số ��ầu tiên lại với nhau và sau đó nhân tổng đó với số thứ ba. Hiển thị câu trả lời dưới dạng `Kết quả là [kết quả]`.
+
+**Bài 6:** Hỏi người dùng ban đầu có bao nhiêu lát pizza và hỏi họ đã ăn bao nhiêu lát. Tính toán xem họ còn lại bao nhiêu lát và hiển thị câu trả lời ở định dạng thân thiện với người dùng.
+
+**Bài 7:** Yêu cầu người dùng nhập tên và tuổi của họ. Cộng thêm 1 vào tuổi của họ và hiển thị thông báo `[Tên] vào sinh nhật tới bạn sẽ [tuổi mới] tuổi`.
+
+**Bài 8:** Yêu cầu nhập tổng giá trị hóa đơn, sau đó hỏi có bao nhiêu người ăn. Chia tổng hóa đơn cho số người ăn và cho biết mỗi người phải trả bao nhiêu.
+
+**Bài 9:** Viết một chương trình yêu cầu nhập số ngày và sau đó hiển thị có bao nhiêu giờ, phút và giây trong số ngày đó.
+
+**Bài 10:** Có 2.204 pound trong một kilogram. Yêu cầu người dùng nhập một trọng lượng tính bằng kilogram và chuyển đổi nó sang pound.
+
+**Bài 11:** Yêu cầu người dùng nhập một số lớn hơn 100 và sau đó nhập một số nhỏ hơn 10. Cho biết số nhỏ hơn có thể chứa trong số lớn hơn bao nhiêu lần, ở định dạng thân thiện với người dùng.
+
 ---
 *Xem lời giải chi tiết [tại đây](../solutions/chapter01.html).*
