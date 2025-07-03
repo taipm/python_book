@@ -1,0 +1,200 @@
+---
+layout: default
+---
+
+<article class="project-content">
+  <div class="project-header">
+    <div class="container">
+      <nav class="breadcrumb">
+        <ol>
+          <li><a href="{{ '/' | relative_url }}">Trang chủ</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}">Dự án</a></li>
+          <li class="current">{{ page.title }}</li>
+        </ol>
+      </nav>
+      
+      <div class="project-meta">
+        <h1 class="project-title">{{ page.title }}</h1>
+        
+        {% if page.description %}
+        <p class="project-description">{{ page.description }}</p>
+        {% endif %}
+        
+        <div class="project-info">
+          {% if page.difficulty %}
+          <span class="difficulty {{ page.difficulty }}">
+            <i class="fas fa-signal"></i>
+            {% case page.difficulty %}
+              {% when 'beginner' %}Cơ bản
+              {% when 'intermediate' %}Trung bình
+              {% when 'advanced' %}Nâng cao
+            {% endcase %}
+          </span>
+          {% endif %}
+          
+          {% if page.duration %}
+          <span class="duration">
+            <i class="fas fa-clock"></i>
+            {{ page.duration }}
+          </span>
+          {% endif %}
+          
+          {% if page.technologies %}
+          <div class="technologies">
+            {% for tech in page.technologies %}
+            <span class="tech-tag">{{ tech }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="project-main">
+    <div class="container">
+      <div class="project-body">
+        {% if page.objectives %}
+        <div class="learning-objectives">
+          <h2><i class="fas fa-bullseye"></i> Mục tiêu dự án</h2>
+          <ul class="objectives-list">
+            {% for objective in page.objectives %}
+            <li>
+              <input type="checkbox" id="obj-{{ forloop.index }}" disabled>
+              <label for="obj-{{ forloop.index }}">{{ objective }}</label>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        
+        {% if page.prerequisites %}
+        <div class="prerequisites">
+          <h2><i class="fas fa-exclamation-triangle"></i> Kiến thức cần có</h2>
+          <ul>
+            {% for prerequisite in page.prerequisites %}
+            <li>{{ prerequisite }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        
+        <div class="project-content-body">
+          {{ content }}
+        </div>
+        
+        {% if page.source_code %}
+        <div class="source-code-section">
+          <h2><i class="fab fa-github"></i> Source Code</h2>
+          <a href="{{ page.source_code }}" class="btn btn-primary" target="_blank">
+            <i class="fab fa-github"></i> Xem code trên GitHub
+          </a>
+        </div>
+        {% endif %}
+        
+        {% if page.demo %}
+        <div class="demo-section">
+          <h2><i class="fas fa-external-link-alt"></i> Demo</h2>
+          <a href="{{ page.demo }}" class="btn btn-secondary" target="_blank">
+            <i class="fas fa-play"></i> Xem demo
+          </a>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+.project-header {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  padding: 2rem 0;
+}
+
+.project-meta h1 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.project-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.difficulty, .duration {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+}
+
+.learning-objectives, .prerequisites {
+  background: var(--color-bg-secondary);
+  border-left: 4px solid var(--color-primary);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.objectives-list {
+  list-style: none;
+  padding: 0;
+}
+
+.objectives-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.objectives-list input[type="checkbox"] {
+  margin-top: 0.2rem;
+}
+
+.source-code-section, .demo-section {
+  text-align: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: var(--color-bg-secondary);
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .project-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .technologies {
+    width: 100%;
+  }
+}
+</style>

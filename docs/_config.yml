@@ -7,6 +7,12 @@ repository: taipm/python_book
 baseurl: /python_book
 url: https://taipm.github.io
 
+# Author info
+author:
+  name: Tai PM
+  email: taipm@example.com
+  url: https://github.com/taipm
+
 # Navigation
 navbar:
   - title: "Trang chủ"
@@ -36,10 +42,12 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     css_class: 'highlight'
+    block:
+      line_numbers: false
 
 # SEO settings
 lang: vi-VN
-author: Tai PM
+timezone: Asia/Ho_Chi_Minh
 social:
   name: Tai PM
   links:
@@ -59,6 +67,12 @@ exclude:
   - package-lock.json
   - .gitignore
   - .env
+  - .env.example
+  - CNAME.example
+  - vendor/
+  - scripts/
+  - .vscode/
+  - .github/
 
 # Include
 include:
@@ -81,3 +95,8 @@ defaults:
       type: "pages"
     values:
       layout: "project"
+
+# GitHub Pages settings
+github: [metadata]
+safe: true
+incremental: false
