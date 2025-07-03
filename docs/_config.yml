@@ -1,0 +1,84 @@
+theme: jekyll-theme-cayman
+title: "Lập trình Python cơ bản"
+description: "Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source"
+
+# GitHub repository
+repository: taipm/python_book
+
+# Navigation
+navbar:
+  - title: "Trang chủ"
+    url: /
+  - title: "Chương"
+    url: /chapters/
+  - title: "Dự án"
+    url: /projects/
+  - title: "Code Examples"
+    url: /code-examples/
+  - title: "GitHub"
+    url: https://github.com/taipm/python_book
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Markdown settings
+markdown: kramdown
+highlighter: rouge
+
+# Syntax highlighting
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+
+# SEO settings
+lang: vi-VN
+author: Tai PM
+social:
+  name: Tai PM
+  links:
+    - https://github.com/taipm
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXXX-X
+
+# Exclude from processing
+exclude:
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - package-lock.json
+  - .gitignore
+  - .env
+
+# Include
+include:
+  - _pages
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: "chapters"
+      type: "pages"
+    values:
+      layout: "chapter"
+  - scope:
+      path: "projects"
+      type: "pages"
+    values:
+      layout: "project"
