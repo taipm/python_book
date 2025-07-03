@@ -1,1 +1,1 @@
-Sitemap: https://taipm.github.io/python_book/sitemap.xml
+Sitemap: http://localhost:4000/python_book/sitemap.xml
