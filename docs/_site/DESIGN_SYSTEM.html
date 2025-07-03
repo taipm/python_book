@@ -37,6 +37,17 @@
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
     </script>
+
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+      };
+    </script>
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
@@ -578,7 +589,7 @@ print("Interactive Python!")
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Tai PM. Được phát hành dưới giấy phép <a href="https://github.com/taipm/python_book/blob/main/LICENSE">MIT License</a>.</p>
-                <p>Cập nhật lần cuối: <time datetime="2025-07-03T17:25:03+07:00">03/07/2025</time></p>
+                <p>Cập nhật lần cuối: <time datetime="2025-07-03T17:27:24+07:00">03/07/2025</time></p>
             </div>
         </div>
     </footer>
