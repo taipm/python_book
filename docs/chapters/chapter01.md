@@ -286,9 +286,15 @@ import this  # Chạy lệnh này để xem full text
 - [ ] So sánh được Python với ngôn ngữ khác
 - [ ] Hiểu triết lý thiết kế Python
 
+## 🧠 Bài tập củng cố
+
+Để củng cố kiến thức đã học trong chương này, hãy hoàn thành các bài tập dưới đây.
+
+- **[Bài tập Chương 1 &raquo;](../exercises/chapter01.html)**
+
 ## ➡️ Chương tiếp theo
 
-Trong [Chương 2: Cài đặt môi trường](chapter02.md), chúng ta sẽ:
+Trong [Chương 2: Cài đặt môi trường](chapter02.html), chúng ta sẽ:
 
 - Cài đặt Python trên máy tính
 - Thiết lập môi trường phát triển

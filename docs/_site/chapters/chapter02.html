@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source">
+    <meta name="description" content="Hướng dẫn chi tiết cách cài đặt Python, VS Code và thiết lập môi trường lập trình chuyên nghiệp.">
     <meta name="author" content="Tai PM">
     
     <!-- SEO Meta Tags -->
-    <meta property="og:title" content="Chương 2: Cài đặt môi trường">
-    <meta property="og:description" content="Sách học Python dành cho người mới bắt đầu - Miễn phí và Open Source">
+    <meta property="og:title" content="Chương 2: Cài đặt và Thiết lập Môi trường">
+    <meta property="og:description" content="Hướng dẫn chi tiết cách cài đặt Python, VS Code và thiết lập môi trường lập trình chuyên nghiệp.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="http://localhost:4000/python_book/chapters/chapter02.html">
     <meta property="og:image" content="http://localhost:4000/python_book/assets/images/python-book-cover.png">
     
-    <title>Chương 2: Cài đặt môi trường</title>
+    <title>Chương 2: Cài đặt và Thiết lập Môi trường</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,6 +160,11 @@
                         
                         
                         
+                        <a href="/python_book/chapters/chapter03.html" class="nav-btn next-btn">
+                            <span>Chương sau</span>
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                        
                     </div>
                 </div>
             </div>
@@ -174,111 +179,376 @@
     <header class="chapter-header">
         <div class="chapter-meta">
             
+            <span class="chapter-number">Chương 2</span>
             
             
             
+            <span class="difficulty-badge difficulty-beginner">
+                
+                        <i class="fas fa-seedling"></i> Cơ bản
+                    
+            </span>
+            
+            
+            
+            <span class="reading-time">
+                <i class="fas fa-clock"></i> 25 phút đọc
+            </span>
             
         </div>
         
-        <h1 class="chapter-title">Chương 2: Cài đặt môi trường</h1>
+        <h1 class="chapter-title">Chương 2: Cài đặt và Thiết lập Môi trường</h1>
         
+        
+        <p class="chapter-description">Hướng dẫn chi tiết cách cài đặt Python, VS Code và thiết lập môi trường lập trình chuyên nghiệp.</p>
         
         
         <!-- Learning Objectives -->
         
+        <div class="learning-objectives">
+            <h3><i class="fas fa-bullseye"></i> Mục tiêu học tập</h3>
+            <ul class="objectives-list">
+                
+                <li>
+                    <input type="checkbox" id="objective-1" class="objective-checkbox">
+                    <label for="objective-1">Cài đặt thành công Python 3 trên Windows, macOS và Linux.</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="objective-2" class="objective-checkbox">
+                    <label for="objective-2">Kiểm tra và xác nhận phiên bản Python đã cài đặt.</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="objective-3" class="objective-checkbox">
+                    <label for="objective-3">Hiểu và sử dụng được Python IDLE.</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="objective-4" class="objective-checkbox">
+                    <label for="objective-4">Cài đặt và cấu hình VS Code cho lập trình Python.</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="objective-5" class="objective-checkbox">
+                    <label for="objective-5">Biết cách tạo và quản lý môi trường ảo (venv).</label>
+                </li>
+                
+                <li>
+                    <input type="checkbox" id="objective-6" class="objective-checkbox">
+                    <label for="objective-6">Chạy được chương trình Python đầu tiên.</label>
+                </li>
+                
+            </ul>
+        </div>
+        
         
         <!-- Prerequisites -->
+        
+        <div class="prerequisites">
+            <h3><i class="fas fa-info-circle"></i> Kiến thức cần có</h3>
+            <ul>
+                
+                <li>Hoàn thành Chương 1: Giới thiệu về Python.</li>
+                
+                <li>Máy tính có kết nối internet.</li>
+                
+                <li>Quyền admin để cài đặt phần mềm.</li>
+                
+            </ul>
+        </div>
         
     </header>
     
     <!-- Chapter Content -->
     <div class="chapter-body">
-        <h1 id="chương-2-cài-đặt-môi-trường">Chương 2: Cài đặt môi trường</h1>
+        <h2 id="-giới-thiệu">🚀 Giới thiệu</h2>
 
-<h2 id="-mục-tiêu-học-tập">🎯 Mục tiêu học tập</h2>
+<p>Chào mừng bạn đến với phần thực hành đầu tiên! Trong chương này, chúng ta sẽ cùng nhau “xây dựng xưởng làm việc” của mình. Việc cài đặt môi trường đúng cách ngay từ đầu sẽ giúp bạn học tập và làm việc hiệu quả hơn rất nhiều sau này.</p>
 
-<p>Sau khi hoàn thành chương này, bạn sẽ có thể:</p>
-
-<ul class="task-list">
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Cài đặt Python trên máy tính của bạn</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Thiết lập môi trường phát triển</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Chạy chương trình Python đầu tiên</li>
-  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Làm quen với Python IDLE và các editor</li>
-</ul>
-
-<h2 id="-kiến-thức-cần-có">📖 Kiến thức cần có</h2>
-
-<ul>
-  <li>Hoàn thành <a href="/python_book/chapters/chapter01.html">Chương 1: Giới thiệu về Python</a></li>
-  <li>Máy tính có kết nối internet</li>
-  <li>Quyền admin để cài đặt phần mềm</li>
-</ul>
-
-<h2 id="-cài-đặt-python">🔧 Cài đặt Python</h2>
-
-<h3 id="windows">Windows</h3>
-
+<p>Chúng ta sẽ đi qua 3 bước chính:</p>
 <ol>
-  <li>Truy cập <a href="https://python.org">python.org</a></li>
-  <li>Click “Download Python 3.x.x”</li>
-  <li>Chạy file installer</li>
-  <li><strong>Quan trọng</strong>: Check “Add Python to PATH”</li>
-  <li>Click “Install Now”</li>
+  <li><strong>Cài đặt Python</strong>: “Trái tim” của mọi thứ.</li>
+  <li><strong>Cài đặt Editor</strong>: Công cụ để “viết” code. Chúng ta sẽ tập trung vào <strong>Visual Studio Code (VS Code)</strong>, một lựa chọn cực kỳ phổ biến và mạnh mẽ.</li>
+  <li><strong>Tạo Môi trường ảo</strong>: “Ngôi nhà” riêng cho mỗi dự án, giúp quản lý thư viện một cách gọn gàng.</li>
 </ol>
 
-<h3 id="macos">macOS</h3>
+<p>Hãy cùng bắt đầu!</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Sử dụng Homebrew (recommended)</span>
-brew <span class="nb">install </span>python
+<h2 id="1-cài-đặt-python">1. Cài đặt Python</h2>
 
-<span class="c"># Hoặc download từ python.org</span>
-</code></pre></div></div>
+<p>Phiên bản Python mới nhất luôn có sẵn trên trang chủ <a href="https://python.org">python.org</a>. Chúng tôi khuyến khích bạn sử dụng phiên bản Python 3.8 trở lên.</p>
 
-<h3 id="linux">Linux</h3>
+<h3 id="hướng-dẫn-cho-windows">Hướng dẫn cho Windows</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ubuntu/Debian</span>
-<span class="nb">sudo </span>apt update
-<span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip
+<p>Đây là hệ điều hành phổ biến nhất, và việc cài đặt cũng rất đơn giản.</p>
 
-<span class="c"># CentOS/RHEL</span>
-<span class="nb">sudo </span>yum <span class="nb">install </span>python3 python3-pip
-</code></pre></div></div>
+<ol>
+  <li><strong>Tải về bộ cài đặt</strong>:
+    <ul>
+      <li>Truy cập <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>.</li>
+      <li>Trang web sẽ tự động nhận diện bạn đang dùng Windows và đề xuất phiên bản phù hợp. Nhấn nút “Download Python 3.x.x”.</li>
+    </ul>
+  </li>
+  <li><strong>Chạy file Installer</strong>:
+    <ul>
+      <li>Mở file <code class="language-plaintext highlighter-rouge">.exe</code> bạn vừa tải về.</li>
+      <li>Một cửa sổ cài đặt sẽ hiện ra. Đây là bước <strong>quan trọng nhất</strong>:</li>
+    </ul>
 
-<h2 id="-kiểm-tra-cài-đặt">✅ Kiểm tra cài đặt</h2>
+    <p><img src="assets/images/ch02/windows_installer.png" alt="Mô tả ảnh: Cửa sổ cài đặt Python trên Windows" title="Nhớ chọn Add Python to PATH" /></p>
 
-<p>Mở Terminal/Command Prompt và chạy:</p>
+    <ul>
+      <li><strong>✅ Tích vào ô “Add Python 3.x to PATH”</strong>. Việc này giúp bạn có thể gõ lệnh <code class="language-plaintext highlighter-rouge">python</code> từ bất kỳ đâu trong Command Prompt.</li>
+      <li>Sau đó, nhấn vào <strong>“Install Now”</strong>.</li>
+    </ul>
+  </li>
+  <li><strong>Hoàn tất</strong>:
+    <ul>
+      <li>Chờ vài phút để quá trình cài đặt hoàn tất.</li>
+      <li>Sau khi xong, bạn sẽ thấy thông báo “Setup was successful”.</li>
+    </ul>
+  </li>
+</ol>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">--version</span>
-<span class="c"># hoặc</span>
-python3 <span class="nt">--version</span>
-</code></pre></div></div>
+<h3 id="hướng-dẫn-cho-macos">Hướng dẫn cho macOS</h3>
 
-<p>Nếu thấy “Python 3.x.x” là thành công!</p>
+<p>macOS đã có sẵn một phiên bản Python cũ. Tuy nhiên, chúng ta nên cài đặt phiên bản mới nhất để sử dụng. Cách tốt nhất là dùng <strong>Homebrew</strong>.</p>
 
-<h2 id="-chương-trình-đầu-tiên">🚀 Chương trình đầu tiên</h2>
+<ol>
+  <li><strong>Cài đặt Homebrew</strong> (nếu bạn chưa có):
+    <ul>
+      <li>Mở ứng dụng <strong>Terminal</strong>.</li>
+      <li>Dán lệnh sau và nhấn Enter:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/bin/bash <span class="nt">-c</span> <span class="s2">"</span><span class="si">$(</span>curl <span class="nt">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="si">)</span><span class="s2">"</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Cài đặt Python qua Homebrew</strong>:
+    <ul>
+      <li>Sau khi cài Homebrew xong, chạy lệnh sau trong Terminal:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>python3
+</code></pre></div>        </div>
+      </li>
+      <li>Homebrew sẽ tự động tải và cài đặt phiên bản Python 3 mới nhất.</li>
+    </ul>
+  </li>
+</ol>
 
-<p>Tạo file <code class="language-plaintext highlighter-rouge">hello.py</code>:</p>
+<h3 id="hướng-dẫn-cho-linux-ubuntudebian">Hướng dẫn cho Linux (Ubuntu/Debian)</h3>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Xin chào, Python!"</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s">"Tôi đã cài đặt thành công!"</span><span class="p">)</span>
-</code></pre></div></div>
+<p>Hầu hết các bản phân phối Linux đã có sẵn Python 3. Bạn chỉ cần đảm bảo nó là phiên bản mới và cài thêm <code class="language-plaintext highlighter-rouge">pip</code> (trình quản lý gói) và <code class="language-plaintext highlighter-rouge">venv</code> (môi trường ảo).</p>
 
-<p>Chạy:</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python hello.py
-</code></pre></div></div>
+<ol>
+  <li><strong>Mở Terminal</strong>.</li>
+  <li><strong>Cập nhật danh sách gói</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt update
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Cài đặt Python và các công cụ cần thiết</strong>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt <span class="nb">install </span>python3 python3-pip python3-venv
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="2-kiểm-tra-cài-đặt">2. Kiểm tra Cài đặt</h2>
+
+<p>Sau khi cài đặt, hãy kiểm tra xem mọi thứ đã sẵn sàng chưa.</p>
+
+<ol>
+  <li>Mở <strong>Command Prompt</strong> (trên Windows) hoặc <strong>Terminal</strong> (trên macOS/Linux).</li>
+  <li>Gõ lệnh sau và nhấn Enter:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">--version</span>
+</code></pre></div>    </div>
+    <p><em>Lưu ý: Trên Windows, bạn có thể chỉ cần gõ <code class="language-plaintext highlighter-rouge">python --version</code>.</em></p>
+  </li>
+  <li>
+    <p>Nếu bạn thấy kết quả tương tự như <code class="language-plaintext highlighter-rouge">Python 3.12.4</code>, xin chúc mừng, bạn đã cài đặt thành công!</p>
+  </li>
+  <li>Tiếp theo, kiểm tra <code class="language-plaintext highlighter-rouge">pip</code>:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip3 <span class="nt">--version</span>
+<span class="c"># Hoặc pip --version trên Windows</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="3-chạy-chương-trình-python-đầu-tiên">3. Chạy chương trình Python đầu tiên</h2>
+
+<p>Bây giờ là lúc để xem thành quả!</p>
+
+<h3 id="sử-dụng-python-idle">Sử dụng Python IDLE</h3>
+
+<p>IDLE là một trình soạn thảo đơn giản đi kèm với Python, rất tiện để chạy thử các đoạn code ngắn.</p>
+
+<ol>
+  <li><strong>Mở IDLE</strong>:
+    <ul>
+      <li><strong>Windows</strong>: Tìm “IDLE” trong Start Menu.</li>
+      <li><strong>macOS/Linux</strong>: Gõ <code class="language-plaintext highlighter-rouge">idle3</code> trong Terminal.</li>
+    </ul>
+  </li>
+  <li>Cửa sổ <strong>Python Shell</strong> sẽ hiện ra, với dấu nhắc <code class="language-plaintext highlighter-rouge">&gt;&gt;&gt;</code>.</li>
+  <li>Gõ lệnh sau và nhấn Enter:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">"Xin chào từ IDLE!"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Kết quả sẽ được in ra ngay bên dưới.</li>
+</ol>
+
+<p><img src="assets/images/ch02/idle_shell.png" alt="Mô tả ảnh: Cửa sổ Python IDLE Shell" title="Python IDLE Shell" /></p>
+
+<h3 id="sử-dụng-file-py">Sử dụng file <code class="language-plaintext highlighter-rouge">.py</code></h3>
+
+<p>Đây là cách chúng ta sẽ làm việc trong suốt cuốn sách.</p>
+
+<ol>
+  <li><strong>Tạo một thư mục</strong> cho dự án sách, ví dụ <code class="language-plaintext highlighter-rouge">python-book-project</code>.</li>
+  <li><strong>Tạo một file</strong> bên trong thư mục đó tên là <code class="language-plaintext highlighter-rouge">hello.py</code>.</li>
+  <li><strong>Mở file <code class="language-plaintext highlighter-rouge">hello.py</code></strong> bằng một trình soạn thảo bất kỳ (như Notepad, hoặc tốt hơn là VS Code mà chúng ta sẽ cài ở bước tiếp theo).</li>
+  <li><strong>Viết code</strong> vào file:
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># file: hello.py
+</span><span class="n">message</span> <span class="o">=</span> <span class="s">"Xin chào thế giới Python!"</span>
+<span class="k">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Tôi đã sẵn sàng cho hành trình phía trước."</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Lưu file</strong> lại.</li>
+  <li><strong>Chạy file</strong> từ Terminal/Command Prompt:
+    <ul>
+      <li>Dùng lệnh <code class="language-plaintext highlighter-rouge">cd</code> để di chuyển vào thư mục dự án của bạn.</li>
+      <li>Gõ lệnh sau:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 hello.py
+<span class="c"># Hoặc python hello.py trên Windows</span>
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Bạn sẽ thấy kết quả được in ra màn hình.</li>
+</ol>
+
+<h2 id="4-thiết-lập-visual-studio-code-vs-code">4. Thiết lập Visual Studio Code (VS Code)</h2>
+
+<p>VS Code là một trình soạn thảo code miễn phí, mạnh mẽ và được yêu thích nhất hiện nay.</p>
+
+<ol>
+  <li><strong>Tải và cài đặt VS Code</strong>:
+    <ul>
+      <li>Truy cập <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a>.</li>
+      <li>Tải về phiên bản cho hệ điều hành của bạn và tiến hành cài đặt.</li>
+    </ul>
+  </li>
+  <li><strong>Cài đặt Extension cho Python</strong>:
+    <ul>
+      <li>Mở VS Code.</li>
+      <li>Nhấn vào biểu tượng <strong>Extensions</strong> ở thanh công cụ bên trái (trông giống 4 ô vuông).</li>
+      <li>Trong ô tìm kiếm, gõ <code class="language-plaintext highlighter-rouge">Python</code>.</li>
+      <li>Chọn extension <strong>Python</strong> của Microsoft và nhấn <strong>Install</strong>. Extension này cung cấp các tính năng như gợi ý code (IntelliSense), kiểm tra lỗi, và hỗ trợ gỡ lỗi (debugging).</li>
+    </ul>
+
+    <p><img src="assets/images/ch02/vscode_python_extension.png" alt="Mô tả ảnh: Cài đặt extension Python trong VS Code" title="Extension Python của Microsoft" /></p>
+  </li>
+  <li><strong>Mở thư mục dự án</strong>:
+    <ul>
+      <li>Trong VS Code, vào <code class="language-plaintext highlighter-rouge">File &gt; Open Folder...</code> và chọn thư mục <code class="language-plaintext highlighter-rouge">python-book-project</code> bạn đã tạo.</li>
+    </ul>
+  </li>
+  <li><strong>Chạy code trong VS Code</strong>:
+    <ul>
+      <li>Mở file <code class="language-plaintext highlighter-rouge">hello.py</code>.</li>
+      <li>Bạn sẽ thấy một nút <strong>Play (▶)</strong> ở góc trên bên phải. Nhấn vào đó.</li>
+      <li>Một cửa sổ Terminal sẽ tự động mở ra bên dưới và chạy code của bạn. Thật tiện lợi!</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="5-môi-trường-ảo-virtual-environment">5. Môi trường ảo (Virtual Environment)</h2>
+
+<p>Đây là một khái niệm cực kỳ quan trọng trong lập trình Python chuyên nghiệp.</p>
+
+<h3 id="tại-sao-cần-môi-trường-ảo">Tại sao cần môi trường ảo?</h3>
+
+<p>Hãy tưởng tượng bạn có 2 dự án:</p>
+<ul>
+  <li><strong>Dự án A</strong>: Cần thư viện <code class="language-plaintext highlighter-rouge">requests</code> phiên bản 2.25.</li>
+  <li><strong>Dự án B</strong>: Cần thư viện <code class="language-plaintext highlighter-rouge">requests</code> phiên bản 2.28 mới nhất.</li>
+</ul>
+
+<p>Nếu bạn cài đặt <code class="language-plaintext highlighter-rouge">requests</code> chung cho toàn bộ máy tính, bạn sẽ không thể đáp ứng yêu cầu của cả hai dự án cùng lúc.</p>
+
+<p><strong>Môi trường ảo (venv)</strong> giải quyết vấn đề này bằng cách tạo ra một “thư mục” riêng, chứa các thư viện chỉ dành cho một dự án cụ thể.</p>
+
+<h3 id="cách-tạo-và-sử-dụng-venv">Cách tạo và sử dụng <code class="language-plaintext highlighter-rouge">venv</code></h3>
+
+<p>Hãy thực hành ngay với dự án của chúng ta.</p>
+
+<ol>
+  <li>
+    <p><strong>Mở Terminal/Command Prompt</strong> và di chuyển vào thư mục <code class="language-plaintext highlighter-rouge">python-book-project</code>.</p>
+  </li>
+  <li><strong>Tạo môi trường ảo</strong>:
+    <ul>
+      <li>Chạy lệnh sau. <code class="language-plaintext highlighter-rouge">venv</code> ở cuối là tên của thư mục môi trường ảo, đây là tên gọi theo quy ước.
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv venv
+<span class="c"># Hoặc python -m venv venv trên Windows</span>
+</code></pre></div>        </div>
+      </li>
+      <li>Bạn sẽ thấy một thư mục mới tên là <code class="language-plaintext highlighter-rouge">venv</code> được tạo ra.</li>
+    </ul>
+  </li>
+  <li><strong>Kích hoạt môi trường ảo</strong>:
+    <ul>
+      <li><strong>Windows</strong>:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.<span class="se">\v</span><span class="nb">env</span><span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+</code></pre></div>        </div>
+      </li>
+      <li><strong>macOS/Linux</strong>:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source </span>venv/bin/activate
+</code></pre></div>        </div>
+      </li>
+      <li>Sau khi kích hoạt, bạn sẽ thấy <code class="language-plaintext highlighter-rouge">(venv)</code> xuất hiện ở đầu dòng lệnh, cho biết bạn đang ở trong môi trường ảo.</li>
+    </ul>
+  </li>
+  <li><strong>Làm việc trong môi trường ảo</strong>:
+    <ul>
+      <li>Bây giờ, bất kỳ thư viện nào bạn cài bằng <code class="language-plaintext highlighter-rouge">pip</code> sẽ chỉ được cài vào thư mục <code class="language-plaintext highlighter-rouge">venv</code> này.</li>
+      <li>Ví dụ, hãy thử cài một thư viện: <code class="language-plaintext highlighter-rouge">pip install requests</code>.</li>
+    </ul>
+  </li>
+  <li><strong>Thoát khỏi môi trường ảo</strong>:
+    <ul>
+      <li>Khi làm việc xong, gõ lệnh:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deactivate
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<blockquote>
+  <p><strong>Quy tắc vàng</strong>: Luôn tạo và kích hoạt môi trường ảo cho <strong>mỗi</strong> dự án Python mới.</p>
+</blockquote>
+
+<h2 id="-tóm-tắt-chương">📋 Tóm tắt chương</h2>
+
+<ul>
+  <li>Bạn đã cài đặt thành công <strong>Python 3</strong> và biết cách kiểm tra phiên bản.</li>
+  <li>Bạn đã chạy được chương trình Python đầu tiên bằng cả <strong>IDLE</strong> và <strong>file <code class="language-plaintext highlighter-rouge">.py</code></strong>.</li>
+  <li>Bạn đã thiết lập <strong>VS Code</strong> với extension Python, sẵn sàng cho việc code chuyên nghiệp.</li>
+  <li>Bạn đã học được cách tạo và quản lý <strong>môi trường ảo (<code class="language-plaintext highlighter-rouge">venv</code>)</strong>, một kỹ năng cực kỳ quan trọng.</li>
+</ul>
+
+<h2 id="-bài-tập-củng-cố">🧠 Bài tập củng cố</h2>
+
+<p>Hãy chắc chắn rằng bạn đã tự tay hoàn thành các bước cài đặt và thiết lập trong chương này.</p>
+
+<ul>
+  <li><strong><a href="../exercises/chapter02.html">Bài tập Chương 2 »</a></strong></li>
+</ul>
 
 <h2 id="️-chương-tiếp-theo">➡️ Chương tiếp theo</h2>
 
-<p>Trong <a href="chapter03.md">Chương 3: Cú pháp cơ bản</a>, chúng ta sẽ học:</p>
-<ul>
-  <li>Variables và data types</li>
-  <li>Input/Output operations</li>
-  <li>Comments và documentation</li>
-</ul>
-
-<hr />
-
-<p><em>Chương đang được phát triển…</em></p>
+<p>Bạn đã có đầy đủ công cụ. Trong <a href="/chapters/chapter03.html">Chương 3: Cú pháp cơ bản và Biến</a>, chúng ta sẽ bắt đầu viết những dòng code Python thực sự đầu tiên để giải quyết các bài toán.</p>
 
     </div>
     
@@ -288,6 +558,43 @@ python3 <span class="nt">--version</span>
         
         
         <!-- Key Terms -->
+        
+        <div class="key-terms">
+            <h3><i class="fas fa-key"></i> Từ khóa quan trọng</h3>
+            <div class="terms-grid">
+                
+                <div class="term-item">
+                    <strong>Python Installer</strong>
+                    <span>Trình cài đặt Python.</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>PATH</strong>
+                    <span>Biến môi trường hệ thống giúp tìm kiếm file thực thi.</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>IDLE</strong>
+                    <span>Môi trường phát triển tích hợp đơn giản đi kèm Python.</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>VS Code</strong>
+                    <span>Trình soạn thảo mã nguồn phổ biến và mạnh mẽ.</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>venv</strong>
+                    <span>Công cụ tạo môi trường ảo, cô lập các thư viện của dự án.</span>
+                </div>
+                
+                <div class="term-item">
+                    <strong>pip</strong>
+                    <span>Hệ thống quản lý gói của Python.</span>
+                </div>
+                
+            </div>
+        </div>
         
         
         <!-- Practice Exercises -->
@@ -303,6 +610,14 @@ python3 <span class="nt">--version</span>
                     <span>Tất cả chương</span>
                 </a>
                 
+                
+                <a href="/python_book/chapters/chapter03.html" class="nav-btn next-btn">
+                    <div class="nav-content">
+                        <span class="nav-label">Chương sau</span>
+                        <span class="nav-title">Chương 3: Cú pháp cơ bản và Biến</span>
+                    </div>
+                    <i class="fas fa-chevron-right"></i>
+                </a>
                 
             </div>
         </div>
@@ -320,7 +635,7 @@ python3 <span class="nt">--version</span>
                 </button>
             </div>
             <div class="feedback-links">
-                <a href="https://github.com/taipm/python_book/issues/new?title=Feedback%20for%20Ch%C6%B0%C6%A1ng+2%3A+C%C3%A0i+%C4%91%E1%BA%B7t+m%C3%B4i+tr%C6%B0%E1%BB%9Dng" class="feedback-link">
+                <a href="https://github.com/taipm/python_book/issues/new?title=Feedback%20for%20Ch%C6%B0%C6%A1ng+2%3A+C%C3%A0i+%C4%91%E1%BA%B7t+v%C3%A0+Thi%E1%BA%BFt+l%E1%BA%ADp+M%C3%B4i+tr%C6%B0%E1%BB%9Dng" class="feedback-link">
                     <i class="fas fa-bug"></i> Báo lỗi
                 </a>
                 <a href="https://github.com/taipm/python_book/discussions" class="feedback-link">
@@ -444,7 +759,7 @@ python3 <span class="nt">--version</span>
             
             <div class="footer-bottom">
                 <p>&copy; 2025 Tai PM. Được phát hành dưới giấy phép <a href="https://github.com/taipm/python_book/blob/main/LICENSE">MIT License</a>.</p>
-                <p>Cập nhật lần cuối: <time datetime="2025-07-03T17:27:24+07:00">03/07/2025</time></p>
+                <p>Cập nhật lần cuối: <time datetime="2025-07-03T17:34:54+07:00">03/07/2025</time></p>
             </div>
         </div>
     </footer>

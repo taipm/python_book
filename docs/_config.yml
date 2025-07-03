@@ -53,6 +53,15 @@ social:
   links:
     - https://github.com/taipm
 
+# Collections
+collections:
+  exercises:
+    output: true
+    permalink: /exercises/:path/
+  solutions:
+    output: true
+    permalink: /solutions/:path/
+
 # Google Analytics (optional)
 # google_analytics: UA-XXXXXXXXX-X
 
@@ -95,6 +104,16 @@ defaults:
       type: "pages"
     values:
       layout: "project"
+  - scope:
+      path: ""
+      type: "exercises"
+    values:
+      layout: "chapter"
+  - scope:
+      path: ""
+      type: "solutions"
+    values:
+      layout: "chapter"
 
 # GitHub Pages settings
 github: [metadata]
